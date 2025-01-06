@@ -16,6 +16,9 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
         
+## Code Snippets
+
+The following code snippet demonstrates line numbering as well as adding callout notes.
 
 ```python linenums="1"
 foo: string = "bar"
@@ -26,7 +29,19 @@ def f() -> int:
     return 42
 ```
 
-1. :man_raising_hand: Test
+1. :man_raising_hand: printing `i` will result in `1`, `2`, and then the loop completes
+
+### Example of pulling code snippets from a file (and highlighting)
+
+* `linenums` is where line numbering starts from
+* `title` is added above the block of code to describe content
+* `hl_lines` is optional and can highlight specific lines of code (offset from 1, regardless of line numbering start)
+
+```python linenums="2" title="foo.py" hl_lines="3"
+--8<-- "docs/demo_code.py:2:5"
+```
+
+## Graphics with `mermaid` (to be explored)
 
 ``` mermaid
 graph LR
@@ -70,7 +85,6 @@ graph LR
       return 0;
     }
     ```
-
 
 !!! note
 
