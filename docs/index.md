@@ -11,6 +11,6 @@ Our first meeting is in Carroll 111 on Wednesday 1/9 at 1:25pm. See you all ther
 
 | Date    | ID     | Type    | Title                                        | Due          |
 | :------ | ------ | :------ | :------------------------------------------- | ------------ |
-| Wed 1/9 | `CL00` | Class   | [Welcome to COMP423](lectures/2025_01_09.md) |              |
+| Wed 1/9 | `MT00` | Meeting | [Welcome to COMP423](meetings/2025_01_09.md) |              |
 |         | `RD00` | Reading | [Syllabus](resources/syllabus.md)            | ==Thu 1/10== |
 
