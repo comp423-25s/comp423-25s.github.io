@@ -5,6 +5,8 @@ hide:
 
 # Foundations of Software Engineering
 
+Our first meeting is in Carroll 111 on Wednesday 1/9 at 1:25pm. See you all there!
+
 ## Schedule
 
 | Date    | ID     | Type    | Title                                        | Due          |
