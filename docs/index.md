@@ -9,8 +9,9 @@ Our first meeting is in Carroll 111 on Wednesday 1/9 at 1:25pm. See you all ther
 
 ## Schedule
 
-| Date    | ID     | Type    | Title                                        | Due          |
-| :------ | ------ | :------ | :------------------------------------------- | ------------ |
-| Wed 1/9 | `MT00` | Meeting | [Welcome to COMP423](meetings/2025_01_09.md) |              |
-|         | `RD00` | Reading | [Syllabus](resources/syllabus.md)            | ==Thu 1/10== |
+### Wed 01/08
 
+* `MT00 - Meeting` [Welcome to COMP423](meetings/2025_01_08.md)
+* ==Due: Thu 1/09== `RD00 - Reading` [Syllabus](resources/syllabus.md) 
+* ==Due: Thu 1/09== `RD01 - Reading` [Personal Character, McConnel](https://canvas.unc.edu) 
+    * RD01 is Chapter 30 from Steve McConnell's [Code Complete](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670). The PDF is found on [Canvas Reserves](https://canvas.unc.edu), respond to GRQs on Gradescope.
