@@ -44,12 +44,18 @@ def f() -> int:
 ## Graphics with `mermaid` (to be explored)
 
 ``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
+sequenceDiagram
+    participant WorkingDir as Working Directory
+    participant Changed as Changed
+    participant Staged as Staged (Index)
+    participant Committed as Committed (Repository)
+
+    WorkingDir ->> Changed: Modify File
+    Changed ->> Staged: git add
+    Staged ->> Committed: git commit
+    Changed ->> WorkingDir: git restore <file>
+    Staged ->> WorkingDir: git restore --staged <file>
+    Committed ->> WorkingDir: git checkout <commit> <file>
 ```
 
 | Method      | Description                          |
