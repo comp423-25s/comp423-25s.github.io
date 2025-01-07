@@ -47,14 +47,14 @@ def f() -> int:
 sequenceDiagram
     participant WorkingDir as Working Directory
     participant Changed as Changed
-    participant Staged as Staged (Index)
-    participant Committed as Committed (Repository)
+    participant Staged as Staged
+    participant Committed as Commit
 
     WorkingDir ->> Changed: Modify File
     Changed ->> Staged: git add
     Staged ->> Committed: git commit
     Changed ->> WorkingDir: git restore <file>
-    Staged ->> WorkingDir: git restore --staged <file>
+    Staged ->> Changed: git restore --staged <file>
     Committed ->> WorkingDir: git checkout <commit> <file>
 ```
 
