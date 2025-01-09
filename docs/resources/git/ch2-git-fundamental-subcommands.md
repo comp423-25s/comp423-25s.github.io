@@ -223,34 +223,6 @@ Congratulations! You’ve just recorded your first piece of project history.
 
 ---
 
-## **What is a Commit?**
-
-A **commit** is a snapshot of your project at a specific point in time. It contains:
-
-1. **File Contents**: The exact state of the files that were committed.
-2. **Metadata**:
-    - Who made the commit (name and email).
-    - When the commit was made (timestamp).
-    - A message describing the changes.
-3. **Parent Pointers**: Each commit records a reference to one or more parent commits. Most commits have a single parent, but merge commits can have multiple parents. Together, these relationships form a **directed acyclic graph (DAG)** of your project’s history. You’ve encountered DAGs in COMP210: Data Structures, and here’s an exciting application of this concept in action!
-4. **SHA-1 Hash**: A unique identifier generated using cryptographic hashing. This ensures the integrity of the commit and makes it impossible to alter past commits without detection.
-
-Here’s an example of what a commit’s metadata might look like:
-
-```bash
-commit 5d41402abc4b2a76b9719d911017c592
-Author: Your Name <your.email@example.com>
-Date:   Tue Jan 1 12:00:00 2025 +0000
-
-    Add README file
-```
-
-The SHA-1 hash (`5d41402abc4b2a76b9719d911017c592`) ensures the commit is unique and tamper-proof. The commit’s parent pointers link it to earlier commits, forming the **DAG** of your project. Your hash will look different.
-
-Why is this amazing? Commits allow you to travel back in time to any point in your project’s history. They’re also the foundation of collaboration in `git`, as they make it easy to share and merge changes with teammates.
-
-
-
 ## Adding Another Commit
 
 Modify `README.md`:
@@ -329,10 +301,10 @@ Here’s a diagram of how `git` tracks files:
 
 ``` mermaid
 sequenceDiagram
-    participant WorkingDir as Working Directory
-    participant Changed as Changed
-    participant Staged as Staged
-    participant Committed as Commit
+    participant WorkingDir as Working Directory<br>(Unchanged)
+    participant Changed as Working Directory<br>(Changed)
+    participant Staged as Staged<br>(Index)
+    participant Committed as Commit<br>(Committed History)
 
     WorkingDir ->> Changed: Modify File
     Changed ->> Staged: git add
