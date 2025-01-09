@@ -92,6 +92,4 @@ Let's be sure `git` is installed on your machine! You can check by opening a Ter
 
 ## What to Expect Next
 
-Now that you know *why* `git` is such a valuable tool, it’s time to learn *how* to use it. In the next chapter, we’ll cover how to set up `git`, configure it to match your workflow, and start using its basic commands.
-
-By the end of this tutorial, you’ll not only be confident using `git` but also understand how it empowers teams to build better software together.
+Now that you know *why* `git` is such a valuable tool, it’s time to learn *how* to use it. In the next chapter we’ll start using its basic commands.

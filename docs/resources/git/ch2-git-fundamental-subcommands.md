@@ -3,7 +3,7 @@ authors:
     - Kris Jordan
 ---
 
-# Ch. 1 Fundamental `git` Subcommands
+# Ch. 2 Fundamental `git` Subcommands
 
 This is a hands-on tutorial! Follow along by running all the commands as we go. By the end, you’ll have a solid foundation of the most fundamental `git` operations.
 
