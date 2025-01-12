@@ -178,11 +178,9 @@ Edit `mkdocs.yml` to look like this:
 site_name: "COMP423 Course Notes"
 theme:
   name: material
-nav:
-  - Home: index.md
 ```
 
-Create an `index.md` file in the `docs` directory:
+Edith the `index.md` file in the `docs` directory:
 
 **`docs/index.md`**
 
@@ -203,7 +201,8 @@ mkdocs serve
 The `serve` subcommand launches a local web server that monitors your files for changes. This means if you edit any of the files, the server will automatically refresh the page in your browser to reflect those changes. Open your browser and navigate to `http://127.0.0.1:8000` to see your site.
 
 !!! info "What is `127.0.0.1`?"
-`127.0.0.1` is the "loopback" address, meaning it always refers to your own computer. This address is commonly used for testing web applications locally.
+
+    `127.0.0.1` is the "loopback" address, meaning it always refers to your own computer. This address is commonly used for testing web applications locally.
 
 To stop the server, return to your terminal and press `Ctrl+C`. This will terminate the `mkdocs serve` process.
 
