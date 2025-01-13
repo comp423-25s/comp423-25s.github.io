@@ -7,14 +7,22 @@ hide:
 
 ## Schedule
 
+### Toolchain Fundamentals
+
+#### Mon 01/13
+
+* `MT02 - Meeting` [Modern Source Code Management (SCM) with `git`](./meetings/2025_01_13.md)
+* `RD05 - Reading` [git Ch03 - Branching and Merging](./resources/git/ch3-git-branch-merge.md) - ==Due: Tue 1/14== 
+* `QZ00 - Quiz` Git 101: [Ch 0](./resources/git/ch0-introduction.md), [Ch 1](./resources/git/ch1-git-structure.md), [Ch 2](./resources/git/ch2-git-fundamental-subcommands.md), [Ch 3](./resources/git/ch3-git-branch-merge.md) - ==On: Fri 1/17==
+
 ### Orientation
 
 #### Fri 01/10
 
 * `MT01 - Meeting` [Software Development Lifecycle](./meetings/2025_01_10.md)
-* `RD02 - Reading` [git Ch00 - What is Source Code Manageement?](./resources/git/ch0-introduction.md) - ==Due: Sun 1/12== 
-* `RD03 - Reading` [git Ch01 - Core Concepts of a `git` Repository](./resources/git/ch1-git-structure.md)  - ==Due: Sun 1/12== 
-* `RD04 - Reading` [git Ch02 - Fundamental `git` Subcommands](./resources/git/ch2-git-fundamental-subcommands.md) - ==Due: Sun 1/12== 
+* `RD02 - Reading` [git Ch00 - What is Source Code Manageement?](./resources/git/ch0-introduction.md) - Due: Sun 1/12 
+* `RD03 - Reading` [git Ch01 - Core Concepts of a `git` Repository](./resources/git/ch1-git-structure.md)  - Due: Sun 1/12 
+* `RD04 - Reading` [git Ch02 - Fundamental `git` Subcommands](./resources/git/ch2-git-fundamental-subcommands.md) - Due: Sun 1/12 
 
 #### Wed 01/08
 
@@ -22,4 +30,4 @@ hide:
 * `RD00 - Reading` [Syllabus](./resources/syllabus.md) - Due: Thu 1/09
 * `RD01 - Reading` [Personal Character, McConnel](https://canvas.unc.edu) - Due: Thu 1/09 
     * RD01 is Chapter 30 from Steve McConnell's [Code Complete](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670). The PDF is found on [Canvas Reserves](https://canvas.unc.edu), respond to GRQs on Gradescope.
-* Install Docker Desktop and be sure you can run `docker run hello-world` - ==Due: Sun 1/12== 
+* Install Docker Desktop and be sure you can run `docker run hello-world` - Due: Sun 1/12 
