@@ -351,15 +351,9 @@ Many tutorials and older users of `git` will use `checkout` where you are learni
 
 By separating branch-related operations (`git switch`) from other tasks like checking out specific files or commits (`git checkout`), Git improved usability and reduced the likelihood of mistakes. 
 
-Today, `git switch` is generally preferred for branch management because:
-
-1. **Clarity**: It explicitly communicates the intent to work with branches.
-2. **Focus**: It avoids the potential pitfalls of accidentally entering a _detached HEAD state_.
-3. **Modern Workflows**: It aligns with best practices for using Git in collaborative and feature-driven development environments.
-
 For most branching tasks, `git switch` is the modern and preferred choice. It simplifies workflows and makes commands more intuitive for beginners and teams alike.
 
-- **Use `git switch`** for creating or moving between branches. It’s explicit and avoids confusion.
+- **Use `git switch`** for creating or moving between branches. It’s explicit and avoids accidentally losing work or entering a detached `HEAD` state.
 - **Use `git checkout`** when you need to:
     - Recover a specific file from a previous commit:
       ```bash
