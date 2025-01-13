@@ -229,7 +229,7 @@ For instance, imagine a developer creates a branch for fixing a small bug and co
 git merge cool-feature
 ```
 
-After the merge, the history will look like a single line of commits, as if all the work was done directly on the target branch.
+After the merge, the history will look like a single line of commits, as if all the work was done directly on the target branch `main`.
 
 #### Merge Commit
 
@@ -295,7 +295,7 @@ Sometimes, two branches modify the same part of a file, and Git doesn’t know w
 
 To resolve the conflict:
 
-1. Use `git status` to see which files have conflicts. It will list the files that need attention:
+(1) Use `git status` to see which files have conflicts. It will list the files that need attention:
 
    ```bash
    git status
@@ -303,15 +303,15 @@ To resolve the conflict:
 
    This is especially useful if multiple files are involved.
 
-2. Open each conflicting file and manually edit it to remove the conflict markers and choose the correct content.
+(2) Open each conflicting file and manually edit it to remove the conflict markers and choose the correct content.
 
-3. Add the resolved files:
+(3) Add the resolved files:
 
    ```bash
    git add <file>
    ```
 
-4. Complete the merge with a commit:
+(4) Complete the merge with a commit:
 
    ```bash
    git commit -m "Resolve merge conflict"
