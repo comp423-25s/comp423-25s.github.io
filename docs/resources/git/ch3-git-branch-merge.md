@@ -375,7 +375,7 @@ For most branching tasks, `git switch` is the modern and preferred choice. It si
 * Branches can be merged either by fast-forwarding (when no divergence) or merge commits (when histories diverge).
 * Resolve merge conflicts manually by editing files, staging changes, and committing resolutions.
 * Delete merged branches with git branch -d to keep your repository clean.
-* Commit, stash, or discard changes before switching branches to avoid conflicts or lost work.
+* Commit, stash, or discard current changes in your working directory before switching branches to avoid conflicts or lost work.
 
 ---
 
