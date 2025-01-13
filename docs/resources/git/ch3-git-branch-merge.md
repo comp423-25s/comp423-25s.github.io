@@ -28,7 +28,7 @@ One of the best things about Git branches is how lightweight and fast they are. 
 
 ---
 
-## What is `HEAD`?
+## What is `HEAD`? Git's *Current Working Branch*
 
 `HEAD` is a special pointer in Git that tells you **where you are currently working** in your project’s history. When `HEAD` is "**attached**" to a branch, you can think of `HEAD` as your **current working branch**. This is analogous to how your shell maintains your current working directory (CWD) such that shell commands you run are _relative_ to your CWD. Git commands are relative to `HEAD`. 
 
