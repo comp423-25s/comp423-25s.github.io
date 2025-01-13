@@ -6,7 +6,7 @@ Imagine this: you're working on a project like a collaborative web app, and you 
 
 ## What is a Branch?
 
-In Git, a **branch** has very simple, beautiful implementation idea: a branch is just a **named pointer to a commit** with the special behavior that **when you create a new commit while working on a branch, the branch pointer automatically updates to reference the new commit**. No other branch pointers are updated. This implementation idea gives rise to a powerful conceptual **abstraction**: branches conceptually represent multiple parallel version histories in a repository. 
+In Git, a **branch** has very simple, beautiful implementation: a branch is just a **named pointer to a commit** with the special behavior that **when you create a new commit while working on a branch, the branch pointer automatically updates to reference the new commit**. No other branch pointers are updated. This implementation idea gives rise to a powerful conceptual **abstraction**: branches conceptually represent multiple parallel version histories in a repository. 
 
 When you first create a new branch, no change in your project's history occurs; instead, a new pointer to the last commit on your current branch is created. This means the two branches start off identical, both pointing to the same commit, sharing the same history. As two individual branches have additional commits added to them independently their histories will diverge, reflecting the different paths of development taken. When you decide it is time to incorporate work on one branch back into another branch, one branch's changes can be merged into another branch.
 
