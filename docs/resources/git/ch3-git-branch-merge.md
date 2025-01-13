@@ -88,7 +88,7 @@ For example, if you have two branches (`main` and `cool-feature`), and you are c
   main
 ```
 
-The asterisk (`*`) indicates the branch that `HEAD` is currently pointing to.
+The asterisk (`*`) indicates the branch that `HEAD` is currently pointing to. Again, think of `HEAD` as your **current working branch**.
 
 ### Adding a New Commit to a Branch
 
