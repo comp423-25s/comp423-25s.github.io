@@ -387,5 +387,5 @@ For most branching tasks, `git switch` is the modern and preferred choice. It si
 - **`git merge`**: Combine changes from one branch into another, creating a unified history.  
 - **`git merge --abort`**: Cancel a merge when there are conflicts and return to the pre-merge conflict state.
 - **`git log --graph --oneline`**: Visualize commit history with branch relationships.
-- **`git stash push`**: Temporarily stash away changes to focus on other tasks or branches.  
+- **`git stash`**: Temporarily stash away changes to focus on other tasks or branches.  
 - **`git stash pop`**: Recover stashed changes to the current working directory.
