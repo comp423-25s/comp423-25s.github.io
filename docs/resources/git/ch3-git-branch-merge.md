@@ -152,9 +152,9 @@ In practical terms, switching branches allows you to work on completely differen
 
 ### Handling In-Progress Changes When Switching Branches
 
-Sometimes, you’ll need to switch branches while you have in-progress changes in your working directory. For example, you might need to review a colleague’s work or fix a bug on another branch. 
+Sometimes, you’ll need to switch branches while you have in-progress changes in your working directory or staging. For example, you might need to review a colleague’s work or fix a bug on another branch. 
 
-In such cases, you have three main strategies:
+In such cases, you have three main strategies to proceed with:
 
 #### 1. Commit Your Changes to Your Branch
 
@@ -170,6 +170,10 @@ This ensures your work is saved and associated with the current branch. Once com
 ```bash
 git switch branch-name
 ```
+
+!!! info "WIP is Work in Progress"
+
+    WIP is a common acronym in the softare engineering world. It is short for Work in Progress.
 
 #### 2. Stash Your Changes
 
