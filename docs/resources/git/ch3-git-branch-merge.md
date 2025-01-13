@@ -367,7 +367,7 @@ For most branching tasks, `git switch` is the modern and preferred choice. It si
 
 ## Key Takeaways
 
-* A Git branch is a lightweight pointer to a commit that updates as you add new commits.
+* A Git branch is a lightweight pointer to a commit. Your current working branch updates to point to new commits added to the branch.
 * Use branches to isolate work, experiment, and collaborate without impacting other branches.
 * Create branches early and often; they’re fast, lightweight, and encourage clean workflows.
 * HEAD points to your current working branch or commit and guides Git commands.
