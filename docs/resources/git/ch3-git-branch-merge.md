@@ -112,13 +112,13 @@ Once you’re on the `cool-feature` branch and ready to make changes, you can ad
 (3) Commit the changes with a descriptive message:
 
    ```bash
-   git commit -m "Add login form to login.html"
+   git commit -m "Add a note about branching and merging"
    ```
 
    After committing, Git will output something like:
 
    ```plaintext
-   [cool-feature abc1234] Add login form to login.html
+   [cool-feature abc1234] Add a note about branching and merging
     1 file changed, 7 insertions(+)
    ```
 
@@ -131,7 +131,7 @@ Once you’re on the `cool-feature` branch and ready to make changes, you can ad
    Example output:
 
    ```plaintext
-   abc1234 (HEAD -> cool-feature) Add login form to login.html
+   abc1234 (HEAD -> cool-feature) Add a note about branching and merging
    ```
 
    Here, you can see that `HEAD` has advanced to the new commit `abc1234` (your commit ID will be different) on the `cool-feature` branch.
