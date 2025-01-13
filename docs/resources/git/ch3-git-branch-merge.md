@@ -173,14 +173,13 @@ git switch branch-name
 
 !!! info "WIP is Work in Progress"
 
-    WIP is a common acronym in the softare engineering world. It is short for Work in Progress.
+    WIP is a common acronym in the softare engineering world. It is an abbreviation for **Work in Progress**. We are all WIPs.
 
-#### 2. Stash Your Changes
 
 If your changes are not ready to be committed, you can temporarily set them aside using the stash:
 
 ```bash
-git stash push -m "Save current progress"
+git stash
 ```
 
 This stores your changes in a separate stash area and reverts your working directory to match the last commit. You can then switch branches:
