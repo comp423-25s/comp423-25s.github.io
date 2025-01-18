@@ -165,6 +165,38 @@ sequenceDiagram
 
 You might need to resolve conflicts here, just as you would when merging any other diverged branches. Remember that `origin/main` is just Git's way of tracking what's on the remote repository – once you have fetched a remote branch, _it's just a local branch with a different naming convention_ and, as such, it behaves _exactly_ like any other branch when it comes to merging.
 
+## Cloning: Starting with an Existing Project
+
+You've likely started many projects by cloning an existing repository. Now that you understand how Git manages remote repositories, let's explore what actually happens during the cloning process. Cloning is essentially an automated combination of several operations you've just learned about, packaged into a single command for convenience.
+
+When you run `git clone`, Git performs these steps in sequence:
+
+1. Creates a new directory for your project
+2. Initializes a fresh Git repository inside it
+3. Adds a remote named "origin" pointing to the URL you're cloning from
+4. Fetches all branches and history from that remote
+5. Sets up tracking relationships between local and remote branches
+6. Checks out the default branch (usually `main`) as your working copy
+
+Let's see this in action:
+
+```bash
+git clone https://github.com/username/project.git # (1)!
+```
+
+1. Download the repository and set up a local copy with remote tracking
+
+This single command accomplishes what would otherwise require several manual steps:
+
+```bash
+mkdir project
+cd project
+git init
+git remote add origin https://github.com/username/project.git
+git fetch origin
+git switch main
+```
+
 ## Pushing: Sharing Your Work
 
 Now that you understand how to get changes from your teammates through pulling, let's look at how to share your work with them through pushing. When you push your commits, you're asking the remote repository to integrate your changes into its history.
