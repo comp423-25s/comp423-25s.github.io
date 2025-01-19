@@ -7,7 +7,6 @@ This tutorial will help you master the core concepts and commands needed for eff
 - Understand how Git connects and synchronizes with other repositories
 - Be able to share your code with teammates and pull in their latest changes
 - Know how to handle common collaboration scenarios and resolve conflicts
-- Have hands-on experience with the fundamental Git commands used in team settings
 - Be ready to participate effectively in team projects
 
 ## Understanding Remotes: Your Gateway to Collaboration
