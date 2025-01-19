@@ -39,6 +39,27 @@ git remote show origin # (2)!
 !!! note "Command Shorthand"
     You can use `git remote -v` as a shorter version of the verbose flag.
 
+### HTTPS vs SSH Remote URLs
+
+When adding a remote, you have two main options for how to connect: HTTPS or SSH.
+
+```bash
+# HTTPS style remote
+git remote add origin https://github.com/username/repository.git
+
+# SSH style remote
+git remote add origin git@github.com:username/repository.git
+```
+
+HTTPS (Hypertext Transfer Protocol Secure) is the protocol that powers secure websites and is GitHub's recommended approach for repository connections. SSH (Secure Shell) is a protocol designed for secure remote access to systems.
+
+Both protocols can be set up to remember your credentials, so you won't need to enter them each time you interact with GitHub. With HTTPS, this means configuring a credential manager to store your personal access token. With SSH, you'll set up a key pair that allows for automatic authentication.
+
+For most developers, HTTPS is the better choice. It works reliably across different networks and firewall configurations, and GitHub's tooling is optimized for HTTPS connections. Consider SSH as an alternative only if you have specific requirements that HTTPS doesn't meet, or if you're already comfortable managing SSH keys.
+
+!!! note "Authentication Deep Dive"
+    GitHub provides comprehensive documentation about authentication methods, security best practices, and troubleshooting tips in their [authentication guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#authenticating-with-the-command-line). You'll find detailed instructions for setting up both HTTPS and SSH authentication, including how to create and manage access tokens, configure SSH keys, and use two-factor authentication for additional security.
+
 ## Fetching: Preview Changes Before Merging
 
 Before you integrate changes from your teammates, it's often helpful to see what they've done first. That's where fetching comes in - it lets you download and inspect changes without immediately applying them to your work. Think of it like previewing changes in a Google Doc before accepting them.
