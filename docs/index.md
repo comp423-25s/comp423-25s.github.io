@@ -20,7 +20,7 @@ hide:
 <!-- * `QZ00 - Quiz` [Submit Partner Preference for QZ00 and EX00](https://docs.google.com/forms/d/e/1FAIpQLSfkSJD1hBE8IrLxvrqIAQ9hf_C0PrcvTTy1gwUcbj8CfCKeOg/viewform?usp=sharing) - Due: Wed 1/15 at 5pm -->
 * `RD06 - Reading` [Starting a Static Website Project with MkDocs](./resources/MkDocs/tutorial.md) - ==Due: Tue 1/21== 
 * `RD07 - Reading` [git Ch04 - Remote Operations: Fetch, Pull, Clone, and Push](./resources/git/ch4-git-remote-fetch-push-pull.md) - ==Due: Tue 1/21== 
-* `EX00 - Exercise` (==Posts by Wed 1/22==) Collaborating on a Documentation Project - ==Due: Sun 1/26== 
+<!-- * `EX00 - Exercise` (==Posts by Wed 1/22==) Collaborating on a Documentation Project - ==Due: Sun 1/26==  -->
 
 
 #### Mon 01/13
