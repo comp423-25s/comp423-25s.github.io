@@ -9,9 +9,15 @@ hide:
 
 ### Toolchain Fundamentals
 
+#### Mon 01/20
+* `HD00 - Holiday` Dr. Martin Luther King, Jr. Holiday
+
+#### Fri 01/17
+* `QZ00 - Quiz` git 101 Quiz
+
 #### Wed 01/15
 * `MT03 - Meeting` [Introducing `git`'s Remote Commands: Fetch, Pull, and Push](./meetings/2025_01_15.md)
-* `QZ00 - Quiz` [Submit Partner Preference for QZ00 and EX00](https://docs.google.com/forms/d/e/1FAIpQLSfkSJD1hBE8IrLxvrqIAQ9hf_C0PrcvTTy1gwUcbj8CfCKeOg/viewform?usp=sharing) - Due: Wed 1/15 at 5pm
+<!-- * `QZ00 - Quiz` [Submit Partner Preference for QZ00 and EX00](https://docs.google.com/forms/d/e/1FAIpQLSfkSJD1hBE8IrLxvrqIAQ9hf_C0PrcvTTy1gwUcbj8CfCKeOg/viewform?usp=sharing) - Due: Wed 1/15 at 5pm -->
 * `RD06 - Reading` [Starting a Static Website Project with MkDocs](./resources/MkDocs/tutorial.md) - ==Due: Tue 1/21== 
 * `RD07 - Reading` [git Ch04 - Remote Operations: Fetch, Pull, Clone, and Push](./resources/git/ch4-git-remote-fetch-push-pull.md) - ==Due: Tue 1/21== 
 * `EX00 - Exercise` (==Posts by Wed 1/22==) Collaborating on a Documentation Project - ==Due: Sun 1/26== 
