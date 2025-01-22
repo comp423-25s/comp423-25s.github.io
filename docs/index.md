@@ -10,8 +10,8 @@ hide:
 ### Toolchain Fundamentals
 
 #### Wed 01/22
-* `MT04 - Meeting` Development Environments, Collaboration, and EX00 Kick-off
-* `EX00 - Exercise` Collaborating on a Documentation Project - ==Due: Sun 1/26== 
+* `MT04 - Meeting` [Getting Started with EX00](./meetings/2025_01_22.md)
+* `EX00 - Exercise` [Collaborating on a Documentation Project](./resources/MkDocs/ex00.md) - ==Due: Sun 1/26== 
 
 #### Mon 01/20
 * `HD00 - Holiday` Dr. Martin Luther King, Jr. Holiday
