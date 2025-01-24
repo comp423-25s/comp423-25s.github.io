@@ -9,6 +9,10 @@ hide:
 
 ### Toolchain Fundamentals
 
+#### Fri 01/24
+
+* `MT05 - Meeting` [Modern Development Environments](./meetings/2025_01_24.md)
+
 #### Wed 01/22
 * `MT04 - Meeting` [Getting Started with EX00](./meetings/2025_01_22.md)
 * `EX00 - Exercise` [Collaborating on a Documentation Project](./resources/MkDocs/ex00.md) - ==Due: Sun 1/26== 
