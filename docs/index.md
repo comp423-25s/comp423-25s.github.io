@@ -9,13 +9,19 @@ hide:
 
 ### Toolchain Fundamentals
 
+#### Mon 01/27
+
+* `MT06 - Meeting` [Containers Continued](./meetings/2025_01_27.md)
+* `RD08 - Reading` [On Communication in SDLC and in Systems Parts 0-2](./resources/apis/0-introduction.md) - ==Due: Tue 1/28==
+* `RD09 - Reading` [API and HTTP Fundamentals](./resources/apis/3-api-design.md) - ==Due: Tue 1/28==
+
 #### Fri 01/24
 
 * `MT05 - Meeting` [Modern Development Environments](./meetings/2025_01_24.md)
 
 #### Wed 01/22
 * `MT04 - Meeting` [Getting Started with EX00](./meetings/2025_01_22.md)
-* `EX00 - Exercise` [Collaborating on a Documentation Project](./resources/MkDocs/ex00.md) - ==Due: Sun 1/26== 
+* `EX00 - Exercise` [Collaborating on a Documentation Project](./resources/MkDocs/ex00.md) - Due: Sun 1/26
 
 #### Mon 01/20
 * `HD00 - Holiday` Dr. Martin Luther King, Jr. Holiday
