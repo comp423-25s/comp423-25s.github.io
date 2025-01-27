@@ -9,4 +9,4 @@ In this sequence of readings, we’ll explore how communication—both among hum
 * [Part 1 - Communication in the Software Development Lifecycle](./1-communication.md)
 * [Part 2 - A Brief History of Communication between Computing Systems](./2-api-history.md)
 * [Part 3 - High-level API Concerns](./3-api-design.md)
-* [Part 4 - Introducing HTTP and REST APIs](./4-http-and-rest.md)
+* [Part 4 - Introducing HTTP and REST APIs](./4-http.md)
