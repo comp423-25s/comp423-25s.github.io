@@ -5,5 +5,4 @@ nav:
         - 1-communication.md
         - 2-api-history.md
         - 3-api-design.md
-        - 4-http-and-rest.md
-        - 4.5-rest.md
+        - 4-http.md
