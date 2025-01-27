@@ -74,7 +74,7 @@ Breaking down this URL:
 
 ### HTTP Methods: The Verbs
 
-HTTP methods define **what** action you want to perform on a resource. Understanding each method’s purpose and proper use is crucial:
+HTTP methods define **what** action you want to perform on a resource. Understanding each method’s purpose and proper use is valuable:
 
 | HTTP Method | Safety   | Idempotency        | Description                                                                                              |
 | ----------- | -------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
@@ -83,6 +83,10 @@ HTTP methods define **what** action you want to perform on a resource. Understan
 | PUT         | Not Safe | Idempotent         | Completely replaces an existing resource, with repeated identical requests having the same effect        |
 | PATCH       | Not Safe | Idempotent         | Partially modifies an existing resource, only updating specified fields                                  |
 | DELETE      | Not Safe | Idempotent         | Removes a resource from the server, with repeated identical requests having the same effect              |
+
+Safety in web APIs is like reading a book versus writing in it. When a method is "safe," it means it only reads or looks at data without changing anything on the server - like how reading a book doesn't change its contents. GET is the only safe method since it just retrieves information, while methods like POST, PUT, PATCH, and DELETE are not safe because they modify data on the server, just like how writing in a book changes its contents.
+
+Idempotency is about whether doing something multiple times has the same effect as doing it once. Think of it like a light switch - flipping it on multiple times when it's already on doesn't make the light any brighter, that's idempotent. GET, PUT, PATCH, and DELETE are idempotent because repeating the same request gives you the same result, while POST is not idempotent because each request creates something new - like how pressing "send" multiple times on an email might send multiple copies of the same message.
 
 #### GET
 * Examples:
