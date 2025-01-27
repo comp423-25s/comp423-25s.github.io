@@ -229,6 +229,11 @@ When the server sends a response, the response starts with a status code. You've
     - 200 OK: Request succeeded.
     - 201 Created: Resource was created successfully.
 
+- **Redirection (3xx)**: Indicates the client needs to take additional action to complete their request.
+    - 301 Moved Permanently: The resource has permanently moved to a new URL.
+    - 302 Found: The resource is temporarily at a different URL.
+    - 307 Temporary Redirect: Like 302, but the request method must not change.
+
 - **Client Errors (4xx)**: Indicates there is something wrong with what the client sending the request is requesting.
     - 400 Bad Request: Invalid syntax or parameters.
     - 401 Unauthorized: The request could not be authenticated to a user or the user no longer exists.
