@@ -6,3 +6,4 @@ nav:
         - 2-api-history.md
         - 3-api-design.md
         - 4-http.md
+        - 5-paths-params.md
