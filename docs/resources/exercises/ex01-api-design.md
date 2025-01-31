@@ -54,8 +54,7 @@ An journey may combine a few user stories in order to give a complete start-to-f
     https://www.youtube.com/watch?v=dQw4w9WgXcQ
     ```
 
-
-### Supported User Stories
+### Required User Stories
 
 1. Sue Sharer
     1. As Sue Sharer, I want to create a new text snippet with an optional expiration time and the ability to request a custom vanity URL, so that I can control how long it is available and share a more meaningful link.
@@ -80,3 +79,19 @@ These two stories should both share the same opaque route, including *method* an
 
 
 ## Phase 1: API Design
+
+The specifications for Phase 1 will be shared as soon as they are finalized and a Canvas post will be made. At a high-level, here is what you can expect:
+
+- Specifications will be written as FastAPI route stubs (and therefore Pydantic models)
+    - A route stub contains all method, path, query parameter, and request body schema necessary
+    - A route stub contains response code and response body schema necessary
+    - A route stub can use `...` or throw a not implemented exception; no implementation is expected.
+- Each pair member will create their own first draft of the API specification in separate branches, independently.
+- Pair members will then come together and create a unified API specification together, pair programming.
+- Some reflection will be expected on the design process with some attention paid to evolution between individual thinking and the combined design.
+
+More detailed specifications will be shared as soon as they finalize. In the interim, you can begin working through this exercise on paper like we practiced in class today. In fact, this is often a great way to start!
+
+## Phase 2: API Implementation
+
+Following submission of your individual and shared API specification drafts, you will work together to implement your API specification. Additionally, you will be writing route tests to verify your implementation. Finally, you will deploy your implementation to a cloud platform we will discuss in class next week.
