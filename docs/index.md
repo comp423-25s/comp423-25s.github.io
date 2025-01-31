@@ -9,12 +9,20 @@ hide:
 
 ### API Fundamentals
 
+#### Fri 01/31
+
+* `MT08 - Meeting` [API Design Exercise](./meetings/2025_01_31.md)
+* `RD11 - Reading` [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html) - ==Due: Sun 2/2==
+* `EX01 - Exercise` [Part 1. API Design Submission](#TODO) - ==Due: Wed 2/5==
+* `EX01 - Exercise` [Part 2. API Implementation](#TODO) - ==Due: Tue 2/11==
+* QZ01 - Quiz 01 on HTTP APIs - ==Friday 2/7==
+
 #### Wed 01/29
 
 * `MT07 - Meeting` [Intermediate `git` and HTTP Tool Introduction](./meetings/2025_01_29.md)
-* `EX01 - Exercise` [EX01 Partner Request Form](https://go.unc.edu/pairs-ex01) ==Due: Wed 1/29==
-* `RD10 - Reading` [Toward Designing and Formally Specifying APIs](./resources/apis/5-api-spec.md) - ==Due: Thu 1/30==
-* `RD10 - Reading` [FastAPI and Pydantic Tutorial](./resources/apis/6-fast-api-tutorial.md) - ==Due: Thu 1/30==
+* `EX01 - Exercise` [EX01 Partner Request Form](https://go.unc.edu/pairs-ex01) Due: Wed 1/29
+* `RD10 - Reading` [Toward Designing and Formally Specifying APIs](./resources/apis/5-api-spec.md) - Due: Thu 1/30
+* `RD10 - Reading` [FastAPI and Pydantic Tutorial](./resources/apis/6-fast-api-tutorial.md) - Due: Thu 1/30
 
 
 ### Toolchain Fundamentals
