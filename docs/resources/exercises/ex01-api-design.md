@@ -77,6 +77,10 @@ These two stories should both share the same opaque route, including *method* an
 * When a user accesses a generated or vanity URL, the system must determine whether it corresponds to a **text snippet** or a **shortened URL**.
 * The user **should not** be able to infer whether a given URL points to a text snippet or a redirection just by looking at it.
 
+### No Authentication Enforced
+
+The concerns of how to authenticate a user, like Amy Admin, and authorize various actions, is beyond your concern in this initial API design. You should proceed with all routes publicly available, unprotected. Later, we'll learn strategies for authenticating and authorizing various actions at the HTTP API level.
+
 ## Phase 1: API Design
 
 ### Getting Started
