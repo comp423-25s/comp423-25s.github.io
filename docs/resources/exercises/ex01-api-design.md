@@ -251,12 +251,13 @@ For request body parameters (used in `POST`/`PUT`/`PATCH` requests), define a Py
 
 ```python
 from fastapi import FastAPI, Body
+from typing import Annotated
 
 # ... Same Item model as above ...
 
 @app.post("/items")
 def create_item(
-    item: Item = Body(
+    item: Annotated[Item, Body(
         description="The product to create",
         openapi_examples={
             "Air Jordans": {
@@ -268,7 +269,7 @@ def create_item(
                 },
             }
         }
-    )
+    )]
 ) -> Item:
     ...
 ```
