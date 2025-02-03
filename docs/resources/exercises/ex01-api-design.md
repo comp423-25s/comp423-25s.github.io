@@ -150,10 +150,12 @@ Define endpoints using FastAPI’s route decorators (e.g., `@app.get`, `@app.pos
 *Example:*
 
 ```python
+from typing import Annotated
+
 class MessageResponse(BaseModel):
-    message: str = Field(
+    message: Annotated[str, Field(
         description="Information conveyed ot user", examples=["Hi!"]
-    )
+    )]
 
 # ...
 
@@ -183,16 +185,17 @@ For dynamic segments in the URL (path parameters), use `Path`. Include a **descr
 
 ```python
 from fastapi import FastAPI, Path
+from typing import Annotated
 
 # ...
 
 @app.get("/users/{user_id}")
 def get_user(
-    user_id: int = Path(
+    user_id: Annotated[int, Path(
         description="The unique ID of the user",
         gt=0,
         examples=[1, 423]
-    )
+    )]
 ) -> User:
     ...
 ```
@@ -205,16 +208,16 @@ For query parameters (appended to the URL), use `Query`. Each query parameter **
 
 ```python
 from fastapi import FastAPI, Query
+from typing import Annotated
 
 # ...
 
 @app.get("/search")
 def search_items(
-    q: str = Query(
+    q: Annotated[str, Query(
         description="The product search query",
-        default="",
         examples=["jordans"]
-    )
+    )] = "" # Default value is empty string
 ) -> SearchResults:
     ...
 ```
@@ -227,16 +230,17 @@ Within your Pydantic models, use the `Field` function to document each field. Ev
 
 ```python
 from pydantic import BaseModel, Field
+from typing import Annotated
 
 class Item(BaseModel):
-    name: str = Field(
+    name: Annotated[str, Field(
         description="Name of Product",
         examples=["UNC Jersey", "UNC Socks"]
-    )
-    price: float = Field(
+    )]
+    price: Annotated[float, Field(
         description="Sales Price",
         examples=[75.0, 20.0]
-    )
+    )]
 ```
 
 #### Request Body Parameters
