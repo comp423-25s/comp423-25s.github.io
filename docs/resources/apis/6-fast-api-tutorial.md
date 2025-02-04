@@ -96,7 +96,7 @@ Try visiting `http://localhost:8000/about`. You should see the alternate message
 
 Next, let’s introduce a **Pydantic** model to represent our data. These models serve a dual purpose: first they give us a Python class we can use throughout our server-side code. Second, in conjunction with FastAPI, they will automatically create a schema for our API specifications.
 
-We’ll use a simple "Post" resource as an example throughout this tutorial. Let's start by return a list of posts from a global dictionary that we’ll pre-populate with a couple sample posts.
+We’ll use a simple "Post" resource as an example throughout this tutorial. Let's start by returning a list of posts from a global dictionary that we’ll pre-populate with a couple sample posts.
 
 1. Define the `Post` model as a subclass of `pydantic.BaseModel`. Be sure to add the `import` statement for `BaseModel`. Define it to have two attributes: `id` and `content`.
 2. Create a global dictionary `posts_db` containing two posts keyed by their IDs.
