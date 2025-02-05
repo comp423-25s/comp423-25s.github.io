@@ -7,11 +7,44 @@ hide:
 
 ## Schedule
 
+### API Fundamentals
+
+#### Mon 02/03
+
+* `MT09 - Meeting` [Input Validation](./meetings/2025_02_03.md)
+* `RD12 - Reading` [FastAPI Query Validation](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/) and [Dynamic Path Validation](https://fastapi.tiangolo.com/tutorial/path-params-numeric-validations/) - ==Due: Tue 2/4==
+
+#### Fri 01/31
+
+* `MT08 - Meeting` [API Design Exercise](./meetings/2025_01_31.md)
+* `RD11 - Reading` [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html) - Due: Sun 2/2
+* `EX01 - Exercise` [Phase 1. API Design Submission](./resources/exercises/ex01-api-design.md) - ==Due: Thu 2/6==
+* `EX01 - Exercise` Phase 2. API Implementation - ==Due: Thu 2/13==
+* QZ01 - Quiz 01 on HTTP APIs - ==Friy 2/7==
+
+#### Wed 01/29
+
+* `MT07 - Meeting` [Intermediate `git` and HTTP Tool Introduction](./meetings/2025_01_29.md)
+* `EX01 - Exercise` [EX01 Partner Request Form](https://go.unc.edu/pairs-ex01) Due: Wed 1/29
+* `RD10 - Reading` [Toward Designing and Formally Specifying APIs](./resources/apis/5-api-spec.md) - Due: Thu 1/30
+* `RD10 - Reading` [FastAPI and Pydantic Tutorial](./resources/apis/6-fast-api-tutorial.md) - Due: Thu 1/30
+
+
 ### Toolchain Fundamentals
+
+#### Mon 01/27
+
+* `MT06 - Meeting` [Containers Continued](./meetings/2025_01_27.md)
+* `RD08 - Reading` [On Communication in SDLC and in Systems Parts 0-2](./resources/apis/0-introduction.md) - Due: Tue 1/28
+* `RD09 - Reading` [API and HTTP Fundamentals](./resources/apis/3-api-design.md) - Due: Tue 1/28
+
+#### Fri 01/24
+
+* `MT05 - Meeting` [Modern Development Environments](./meetings/2025_01_24.md)
 
 #### Wed 01/22
 * `MT04 - Meeting` [Getting Started with EX00](./meetings/2025_01_22.md)
-* `EX00 - Exercise` [Collaborating on a Documentation Project](./resources/MkDocs/ex00.md) - ==Due: Sun 1/26== 
+* `EX00 - Exercise` [Collaborating on a Documentation Project](./resources/MkDocs/ex00.md) - Due: Sun 1/26
 
 #### Mon 01/20
 * `HD00 - Holiday` Dr. Martin Luther King, Jr. Holiday

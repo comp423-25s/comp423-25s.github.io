@@ -148,7 +148,7 @@ This shows the `.git` directory alongside the regular and parent directory entri
 Let’s start by adding a README file:
 
 ```bash
-echo "# Welcome to COMP423!" > README.md
+echo '# Welcome to COMP423!\n' > README.md
 ```
 
 This command creates a file named `README.md` with the text \`# Welcome to COMP423!\` as its content. The `>` operator redirects the text into the file. You learned about output redirection in COMP211: Systems Fundamentals.

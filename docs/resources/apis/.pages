@@ -1,0 +1,10 @@
+title: On Communication and APIs
+nav:
+    - Introduction: 0-introduction.md
+    - Parts:
+        - 1-communication.md
+        - 2-api-history.md
+        - 3-api-design.md
+        - 4-http.md
+        - 5-api-spec.md
+        - 6-fast-api-tutorial.md

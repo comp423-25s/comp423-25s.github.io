@@ -28,9 +28,9 @@ theme:
     - navigation.tracking
     - navigation.instant
     - navigation.instant.progress
-    - navigation.expand
     - navigation.tabs
     - navigation.indexes
+    - navigation.footer
     - content.code.select
     - content.code.annotate
     - content.code.copy
