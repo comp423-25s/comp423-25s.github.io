@@ -1,0 +1,5 @@
+title: People
+order: asc
+nav:
+    - TA Team: team.md
+    - bios
