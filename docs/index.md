@@ -9,10 +9,14 @@ hide:
 
 ### API Fundamentals
 
+#### Wed 02/05
+
+* `MT10 - Meeting` [HTTP API Case Study](./meetings/2025_02_05.md)
+
 #### Mon 02/03
 
 * `MT09 - Meeting` [Input Validation](./meetings/2025_02_03.md)
-* `RD12 - Reading` [FastAPI Query Validation](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/) and [Dynamic Path Validation](https://fastapi.tiangolo.com/tutorial/path-params-numeric-validations/) - ==Due: Tue 2/4==
+* `RD12 - Reading` [FastAPI Query Validation](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/) and [Dynamic Path Validation](https://fastapi.tiangolo.com/tutorial/path-params-numeric-validations/) - Due: Tue 2/4
 
 #### Fri 01/31
 
@@ -20,7 +24,7 @@ hide:
 * `RD11 - Reading` [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html) - Due: Sun 2/2
 * `EX01 - Exercise` [Phase 1. API Design Submission](./resources/exercises/ex01-api-design.md) - ==Due: Thu 2/6==
 * `EX01 - Exercise` Phase 2. API Implementation - ==Due: Thu 2/13==
-* QZ01 - Quiz 01 on HTTP APIs - ==Friy 2/7==
+* QZ01 - Quiz 01 on HTTP APIs - ==Friday 2/7==
 
 #### Wed 01/29
 
