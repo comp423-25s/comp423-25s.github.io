@@ -9,6 +9,10 @@ hide:
 
 ### API Fundamentals
 
+#### Fri 02/07
+
+* `QZ01 - Quiz`
+
 #### Wed 02/05
 
 * `MT10 - Meeting` [HTTP API Case Study](./meetings/2025_02_05.md)
