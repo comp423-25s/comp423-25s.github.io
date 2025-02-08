@@ -1,5 +1,11 @@
 # EX01. API Design and Implementation
 
+## Breakdown of Parts
+
+Part 1. You only need to implement the route decorators and function signatures, *NOT* the actual implementation of the API.
+
+Part 2. You wll implement the API.
+
 ## App Overview: The Pastebin + URL Shortener
 
 In this lab, you and a partner will collaborate to design and implement a service that combines:

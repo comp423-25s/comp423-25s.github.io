@@ -1,1 +1,7 @@
 title: git for COMP423
+nav:
+    - ch0-introduction.md
+    - ch1-git-structure.md
+    - ch2-git-fundamental-subcommands.md
+    - ch3-git-branch-merge.md
+    - ch4-git-remote-fetch-push-pull.md

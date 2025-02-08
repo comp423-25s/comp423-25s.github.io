@@ -1,4 +1,4 @@
-# Part 4. Key Concepts in HTTP
+# 4. Key Concepts in HTTP
 
 Have you ever wondered how your favorite apps communicate with servers behind the scenes? When you leave a comment on Instagram, how does the server know which post you’re commenting on and what you wrote? In this section, we'll explore how modern software systems communicate via HTTP (Hypertext Transfer Protocol), focusing on APIs (Application Programming Interfaces) and the structure that makes it all work.
 
