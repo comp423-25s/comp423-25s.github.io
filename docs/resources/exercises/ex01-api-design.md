@@ -339,3 +339,17 @@ Questions to consider in the context of your API:
 5. **Designing the Interface First for Human-Centered Development**
 
     By focusing on the API interface before implementation, you’ve embraced a human-centered approach—prioritizing how users interact with the system rather than getting lost in internal details. This ensures the design is intuitive, valuable, and easy to integrate. A well-defined interface also enables parallel development: frontend teams can build against the spec while backend teams implement functionality, making collaboration more efficient. In real-world projects, this approach reduces wasted effort, improves usability, and accelerates development, ultimately leading to better software.
+
+
+## Phase II - Implementation
+
+In this phase of the exercise, you will implement a service layer in order to have a functional API.
+
+Before beginning on Phase II, you should complete the following readings and submit them on Gradescope:
+
+* [Layered Architecture](../backend-architecture/0-layered-architecture.md)
+* [Dependency Injection in FastAPI](../backend-architecture/1-dependency-injection.md)
+
+To get started on Phase II, create a new branch named `phase2-services` and collaborate on it. If you and your partner work together with pair programming, working on this branch together is fine. If you are working async, start your own separate branches and be sure both of you attempt to complete this phase independently.
+
+By the end of Phase 2, you should be able to use the `/docs` UI to complete the stories of this exercise from each user's perspective.

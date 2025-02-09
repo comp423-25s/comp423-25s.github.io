@@ -12,6 +12,8 @@ hide:
 #### Fri 02/07
 
 * `QZ01 - Quiz`
+* `RD13 - Reading` [Layered Architecture](./resources/backend-architecture/0-layered-architecture.md) - ==Due: Tue 2/11==
+* `RD14 - Reading` [Dependency Injection](./resources/backend-architecture/1-dependency-injection.md) - ==Due: Tue 2/11==
 
 #### Wed 02/05
 
@@ -26,9 +28,9 @@ hide:
 
 * `MT08 - Meeting` [API Design Exercise](./meetings/2025_01_31.md)
 * `RD11 - Reading` [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html) - Due: Sun 2/2
-* `EX01 - Exercise` [Phase 1. API Design Submission](./resources/exercises/ex01-api-design.md) - ==Due: Thu 2/6==
-* `EX01 - Exercise` Phase 2. API Implementation - ==Due: Thu 2/13==
-* QZ01 - Quiz 01 on HTTP APIs - ==Friday 2/7==
+* `EX01 - Exercise` [Phase 1. API Design Submission](./resources/exercises/ex01-api-design.md) - Due: Thu 2/6
+* `EX01 - Exercise` Phase 2. API Implementation - ==Due: Tue 2/18==
+* QZ01 - Quiz 01 on HTTP APIs - Friday 2/7
 
 #### Wed 01/29
 
