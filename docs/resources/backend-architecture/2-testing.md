@@ -2,7 +2,7 @@
 
 ## Why is Testing Important?
 
-Software can be fragile. One small change can break something else without warning. Testing brings stability and trust. It confirms that your code works as expected, your bug fixes stick, and that new features don’t undo old ones. Here’s why that matters:
+Software can be fragile. One small change can break something else without warning. Testing brings stability and trust. It confirms that your code works as expected, your bug fixes stick, and that new features don’t undo old ones. There are many reasons for testing software, but some of the top reasons for testing are:
 
 - **Acceptance and Verification**: Tests show that your software meets user needs and business goals. You can point to a test and say, “Yes, this works as intended.”
 - **Regression Prevention**: With automated tests, you’ll know if new code breaks existing functionality. This saves you from introducing the same bug again and again. When you fix a bug, writing a test locks in the fix. If that bug ever shows up again, the test fails and alerts you.
@@ -10,7 +10,7 @@ Software can be fragile. One small change can break something else without warni
 
 A great test suite isn’t just about catching bugs—it transforms the way you write code. When you have fast, reliable tests, you can experiment freely, refactor fearlessly, and build new features with confidence. Instead of worrying about whether a change might break something unexpected, you get immediate feedback. Green tests? You’re good to go. Red tests? You know exactly where to look. This is especially valuable in a team setting where you might not have written the original code or its tests. With a strong test suite, you don’t have to rely on gut instinct or deep dives into unfamiliar code; the tests will tell you if your changes introduce problems.
 
-Good tests also reinforce clean abstraction layers. When a module or API has solid test coverage, you can trust its interface without constantly checking its implementation. This means you can operate at a higher level, focusing on solving the problem at hand rather than getting bogged down in lower-level details. It’s a massive boost to developer productivity and experience—when the foundational layers are proven to work well with testing, and "just work" in practice, you can build on top of them with confidence.
+Good tests also reinforce clean abstraction layers. When a module or API has solid test coverage, you can trust its interface without constantly checking its implementation. This means you can operate at a higher level, focusing on solving the problem at hand rather than getting bogged down in lower-level details. It’s a massive boost to developer productivity and experience—when the foundational layers are proven to work well with testing, and they "just work" in practice, you can build on top of them with confidence.
 
 ## Types of Software Tests
 

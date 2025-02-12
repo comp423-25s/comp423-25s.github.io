@@ -2,6 +2,7 @@
 
 ## Core Content
 
+- [Backend Architecture and Testing](./backend-architecture/0-layered-architecture.md)
 - [Introduction to HTTP, RESTful APIs, and FastAPI](./apis/0-introduction.md)
 - [Collaborating with `git`](./git/ch0-introduction.md)
 - [Static Documentation Sites with `MkDocs`](./MkDocs/tutorial.md)
