@@ -33,27 +33,27 @@ When you’re intentional about testing, you avoid redundant or low-value tests 
 
 Each type of test provides different insights into your software. Here’s a breakdown of the most common ones:
 
-- **Unit Tests** Unit tests focus on individual functions or methods in complete isolation. They are fast, reliable, and help confirm that small pieces of logic work correctly. **If a unit test fails, you know exactly where the problem is.**  
+- **Unit Tests** Unit tests focus on individual functions or methods in isolation. They are fast, reliable, and help confirm that small pieces of logic work correctly. **If a unit test fails, you know exactly where the problem is.**  
     * **Strengths:** Quick to run, easy to debug, useful for pinpointing issues in logic.  
     * **Limitations:** They only test small pieces of the system and don’t guarantee that components work well together.  
     * **Best for:** Business logic, calculations, pure functions, and methods with clear inputs and outputs.  
 
 - **Integration Tests** These verify that multiple parts of the system work together as expected. An integration test might check how your API interacts with a service, or how a service interacts with a database, or, generally whether two or more units of code coordinate correctly.  
     - **Strengths:** Helps catch real-world interaction issues that unit tests miss.  
-    - **Limitations:** Slower than unit tests, and failures can be harder to diagnose.  
-    - **Best for:** Database interactions, API calls, authentication flows, and dependencies between services.  
+    - **Limitations:** If integration test includes external systems, they are slower than unit tests. Failures can be harder to diagnose since scope is inclusive of many parts of the system.  
+    - **Best for:** Dependencies between services, database interactions, API calls, authentication flows, and so on.  
 
 - **End-to-End (E2E) Tests** E2E tests simulate a user’s experience through the entire system, from frontend clicks to backend responses and database updates. These tests confirm that **everything works together in a real-world scenario**.  
     - **Strengths:** Provides high confidence that the entire system functions correctly.  
     - **Limitations:** Slow, complex to set up, and brittle—small UI changes can break them.  
     - **Best for:** Critical user flows, such as signups, payments, and login/logout sequences.  
 
-- **Performance Tests** Performance tests measure **how fast** the system responds and how efficiently it handles requests. These tests help ensure that the software remains performant under normal and peak conditions.  
+- **Performance Tests / Profiling** Performance tests, often technically referred to as **profiling**, measure **how fast** the system responds and how efficiently it handles requests. These tests help ensure that the software remains performant under normal and peak conditions.  
     - **Strengths:** Helps detect slow response times, memory leaks, and bottlenecks.  
     - **Limitations:** Requires specialized tools and environments to get accurate results.  
     - **Best for:** Response time benchmarks, caching strategies, and database query optimization.  
 
-- **Load Tests** A type of performance test that determines how well the system handles high levels of traffic. Load tests simulate many users interacting with the system simultaneously to expose potential crashes or slowdowns.  
+- **Load Tests** A type of performance test that determines how well the system handles high levels of traffic. Load tests simulate many users interacting with the system simultaneously to expose potential crashes, slowdowns, race conditions and more.  
     - **Strengths:** Helps anticipate scaling issues before they impact real users.  
     - **Limitations:** Can be expensive and time-consuming to run effectively.  
     - **Best for:** Large-scale web applications, APIs, and cloud services.  
