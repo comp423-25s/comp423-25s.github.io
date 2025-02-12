@@ -343,7 +343,7 @@ Questions to consider in the context of your API:
 
 ## Phase II - Implementation
 
-In this phase of the exercise, you will implement a service layer in order to have a functional API.
+In this phase of the exercise, you will implement a service layer in order to have a functional API. All of your Phase II business logic should be in the service layer. Your routes should only address HTTP concerns and otherwise delegate control to your service(s).
 
 Before beginning on Phase II, you should complete the following readings and submit them on Gradescope:
 
@@ -352,4 +352,14 @@ Before beginning on Phase II, you should complete the following readings and sub
 
 To get started on Phase II, create a new branch named `phase2-services` and collaborate on it. If you and your partner work together with pair programming, working on this branch together is fine. If you are working async, start your own separate branches and be sure both of you attempt to complete this phase independently.
 
-By the end of Phase 2, you should be able to use the `/docs` UI to complete the stories of this exercise from each user's perspective.
+By the end of Phase 2, you should be able to use the `/docs` UI to complete the stories of this exercise from each user's perspective. Of importance, you should also be able to follow Cai's stories _directly_ in the web browser and be presented with plaintext or redirected to another URL by visiting the shortened URL. Finally, visit tracking and link expiration implementation is left as a challenge for extra credit.
+
+Phase 2 should have `pytest` integration tests cover Sue Sharer and Cai Clicker's stories. You should also write unit tests that cover Sue Sharer and Cai Clicker's stories. See the [introduction to testing](../backend-architecture/2-testing.md) reading for more guidance on testing. Testing Amy's stories is left as an extra credit opportunity.
+
+On Friday, Feb 14th, we will introduce deployment and you will deploy Phase II to Carolina Cloud Apps.
+
+### Implementation Extra Credit
+
+* 1 point of extra credit for integration testing and unit testing Amy's stories
+* 1 point of extra credit for implementing click tracking in a way that's demonstrable and unit tested
+* 1 points of extra credit for successfully implementing resource experiation in a way that's demonstrable and unit tested (hint: you'll need to find a way to cleverly simulate the passage of time by patching or mocking...)

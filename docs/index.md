@@ -7,13 +7,19 @@ hide:
 
 ## Schedule
 
-### API Fundamentals
+### Backend Concerns: API Fundamentals and Testing
+
+#### Wed 02/12
+
+* `MT11 - Meeting` [Implementing EX01 with a Service Layer](./meetings/2025_02_12.md)
+* `RD15 - Reading` [Introduction to Testing](./resources/backend-architecture/2-testing.md) - ==Due: Thu 2/13==
+* `EX01 - Exercise` [Phase 2. API Implementation](./resources/exercises/ex01-api-design.md#phase-ii---implementation) - ==Due: Tue 2/18==
 
 #### Fri 02/07
 
 * `QZ01 - Quiz`
-* `RD13 - Reading` [Layered Architecture](./resources/backend-architecture/0-layered-architecture.md) - ==Due: Tue 2/11==
-* `RD14 - Reading` [Dependency Injection](./resources/backend-architecture/1-dependency-injection.md) - ==Due: Tue 2/11==
+* `RD13 - Reading` [Layered Architecture](./resources/backend-architecture/0-layered-architecture.md) - Due: Tue 2/11
+* `RD14 - Reading` [Dependency Injection](./resources/backend-architecture/1-dependency-injection.md) - Due: Tue 2/11
 
 #### Wed 02/05
 
@@ -29,7 +35,6 @@ hide:
 * `MT08 - Meeting` [API Design Exercise](./meetings/2025_01_31.md)
 * `RD11 - Reading` [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html) - Due: Sun 2/2
 * `EX01 - Exercise` [Phase 1. API Design Submission](./resources/exercises/ex01-api-design.md) - Due: Thu 2/6
-* `EX01 - Exercise` Phase 2. API Implementation - ==Due: Tue 2/18==
 * QZ01 - Quiz 01 on HTTP APIs - Friday 2/7
 
 #### Wed 01/29
