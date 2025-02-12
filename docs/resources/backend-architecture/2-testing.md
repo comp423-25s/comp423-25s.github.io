@@ -150,54 +150,77 @@ Typically, you will write _unit tests_ **before** writing integration tests, but
 Let's start by testing the core game logic in our `GameService` class. Since this service needs to make random choices, we'll use Python's `unittest.mock.patch` to temporarily replace the random choice behavior during our tests and control it ourselves:
 
 ```python title="test_services.py"
-from unittest.mock import patch
+from unittest.mock import MagicMock
 from services import GameService
-from models import Choice, GameResult
+from models import Choice, GamePlay, GameResult
+from datetime import datetime, UTC
+
+
+def create_mock_game_service(choice_to_return: Choice) -> GameService:
+    """Create a GameService with a mocked _random_choice method"""
+    service = GameService()
+    service._random_choice = MagicMock(return_value=choice_to_return)
+    return service
+
 
 def test_game_service_rock_beats_scissors():
-    # patch replaces GameService._random_choice with a mock that returns scissors
-    with patch.object(GameService, '_random_choice', return_value=Choice.scissors):
-        service = GameService()
-        result = service.play(Choice.rock)
-        
-        assert result.user_choice == Choice.rock
-        assert result.api_choice == Choice.scissors
-        assert result.user_wins is True
+    # Create a service that will return scissors
+    service = create_mock_game_service(Choice.scissors)
+    result = service.play(GamePlay(user_choice=Choice.rock))
+
+    assert result.user_choice == Choice.rock
+    assert result.api_choice == Choice.scissors
+    assert result.user_wins is True
+    service._random_choice.assert_called_once()
+
 
 def test_game_service_scissors_loses_to_rock():
-    with patch.object(GameService, '_random_choice', return_value=Choice.rock):
-        service = GameService()
-        result = service.play(Choice.scissors)
-        
-        assert result.user_choice == Choice.scissors
-        assert result.api_choice == Choice.rock
-        assert result.user_wins is False
+    service = create_mock_game_service(Choice.rock)
+    result = service.play(GamePlay(user_choice=Choice.scissors))
+
+    assert result.user_choice == Choice.scissors
+    assert result.api_choice == Choice.rock
+    assert result.user_wins is False
+    service._random_choice.assert_called_once()
+
+
+def test_game_service_draw():
+    service = create_mock_game_service(Choice.paper)
+    result = service.play(GamePlay(user_choice=Choice.paper))
+
+    assert result.user_choice == Choice.paper
+    assert result.api_choice == Choice.paper
+    assert result.user_wins is False  # Draws count as API wins
+    service._random_choice.assert_called_once()
+
 
 def test_game_service_all_combinations():
     """Test all possible game combinations systematically"""
+    # Define all possible combinations and expected results
     test_cases = [
-        (Choice.rock, Choice.scissors, True),    # Rock beats scissors
-        (Choice.rock, Choice.paper, False),      # Rock loses to paper
-        (Choice.rock, Choice.rock, False),       # Rock ties rock (API wins)
-        (Choice.paper, Choice.rock, True),       # Paper beats rock
-        (Choice.paper, Choice.scissors, False),   # Paper loses to scissors
-        (Choice.paper, Choice.paper, False),     # Paper ties paper (API wins)
-        (Choice.scissors, Choice.paper, True),    # Scissors beats paper
-        (Choice.scissors, Choice.rock, False),    # Scissors loses to rock
-        (Choice.scissors, Choice.scissors, False) # Scissors ties scissors (API wins)
+        (Choice.rock, Choice.scissors, True),  # Rock beats scissors
+        (Choice.rock, Choice.paper, False),  # Rock loses to paper
+        (Choice.rock, Choice.rock, False),  # Rock ties rock (API wins)
+        (Choice.paper, Choice.rock, True),  # Paper beats rock
+        (Choice.paper, Choice.scissors, False),  # Paper loses to scissors
+        (Choice.paper, Choice.paper, False),  # Paper ties paper (API wins)
+        (Choice.scissors, Choice.paper, True),  # Scissors beats paper
+        (Choice.scissors, Choice.rock, False),  # Scissors loses to rock
+        (Choice.scissors, Choice.scissors, False),  # Scissors ties scissors (API wins)
     ]
-    
+
     for user_choice, api_choice, expected_win in test_cases:
-        with patch.object(GameService, '_random_choice', return_value=api_choice):
-            service = GameService()
-            result = service.play(user_choice)
-            
-            assert result.user_choice == user_choice
-            assert result.api_choice == api_choice
-            assert result.user_wins == expected_win, (
-                f"Failed when user played {user_choice.value} "
-                f"against API's {api_choice.value}"
-            )
+        # Create a service that will return the API choice we want to test
+        service = create_mock_game_service(api_choice)
+        result = service.play(GamePlay(user_choice=user_choice))
+
+        assert result.user_choice == user_choice
+        assert result.api_choice == api_choice
+        assert result.user_wins == expected_win, (
+            f"Failed when user played {user_choice.value} "
+            f"against API's {api_choice.value}"
+        )
+        service._random_choice.assert_called_once()
 ```
 
 #### Understanding patch.object
@@ -224,30 +247,6 @@ Patching is particularly useful when testing code that has external dependencies
 Now let's look at unit testing the FastAPI route functions. These tests focus on the route function itself, isolated from both HTTP concerns and service implementation. We will isolate the routing concerns by calling the functions directly and manually controlling the arguments (FastAPI routes are just plain-old functions, after all!). Additionally, we will isolate the service by _mocking it_, a technique best seen and explained with some real usage:
 
 ```python title="test_main_unit.py"
-from unittest.mock import MagicMock
-from datetime import datetime, UTC
-from main import play
-from models import GamePlay, GameResult, Choice
-
-
-def test_play_route_unit():
-    # Create a MagicMock to stand in for our GameService
-    mock_service = MagicMock()
-
-    # Configure what the mock service should return
-    mock_service.play.return_value = GameResult(
-        timestamp=datetime.now(),
-        user_choice=Choice.rock,
-        api_choice=Choice.paper,
-        user_wins=False,
-    )
-
-    # Call the route function directly - no HTTP involved
-    gameplay = GamePlay(user_choice=Choice.rock)
-    result = play(gameplay, mock_service)
-
-    # Verify the route function behaved correctly
-    assert isinstance(result, GameResult)
 
     # Verify how the service was used
     mock_service.play.assert_called_once_with(GamePlay(user_choice=Choice.rock))
