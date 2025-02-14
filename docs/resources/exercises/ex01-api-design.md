@@ -356,8 +356,6 @@ By the end of Phase 2, you should be able to use the `/docs` UI to complete the 
 
 Phase 2 should have `pytest` integration tests cover Sue Sharer and Cai Clicker's stories. You should also write unit tests that cover Sue Sharer and Cai Clicker's stories. See the [introduction to testing](../backend-architecture/2-testing.md) reading for more guidance on testing. Testing Amy's stories is left as an extra credit opportunity.
 
-On Friday, Feb 14th, we will introduce deployment and you will deploy Phase II to Carolina Cloud Apps.
-
 ### Implementation Extra Credit
 
 * 1 point of extra credit for integration testing and unit testing Amy's stories
