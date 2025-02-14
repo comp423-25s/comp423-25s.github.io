@@ -9,10 +9,14 @@ hide:
 
 ### Backend Concerns: API Fundamentals and Testing
 
+#### Fri 02/14
+
+* `MT12 - Meeting` [Pairing time for EX01](./meetings/2025_02_14.md)
+
 #### Wed 02/12
 
 * `MT11 - Meeting` [Implementing EX01 with a Service Layer](./meetings/2025_02_12.md)
-* `RD15 - Reading` [Introduction to Testing](./resources/backend-architecture/2-testing.md) - ==Due: Thu 2/13==
+* `RD15 - Reading` [Introduction to Testing](./resources/backend-architecture/2-testing.md) - Due: Thu 2/13
 * `EX01 - Exercise` [Phase 2. API Implementation](./resources/exercises/ex01-api-design.md#phase-ii---implementation) - ==Due: Tue 2/18==
 
 #### Fri 02/07
