@@ -190,6 +190,8 @@ After doing so, **once your project successfully builds**, you can run the follo
 oc get route comp423-cicd-demo
 ```
 
+**NOTE: You will need to manually put `http://` in front of this, your browser will attempt to navigate to `https://` and the secure route is not yet setup. We will add the secure setting in the future.**
+
 What this will do is show you the public route to your app running in production. Try opening this URL in your browser or your phone. This is live on the public internet!
 
 ### 5. Setting up Continuous Deployment Using a Webhook Callback from GitHub Actions to OKD
