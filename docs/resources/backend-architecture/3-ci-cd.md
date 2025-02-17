@@ -55,6 +55,8 @@ Individually, accept the following GitHub Classroom assignment: <https://classro
 
 Then, on your host machine outside of any other project, clone your repository. Open this repository in VSCode and then open it in a VS Code Dev Container.
 
+If you are on Windows and the build fails, open `.devcontainer/post-create.sh` and check the line ending setting for this file. It needs to be `LF` not `CRLF`. If you see `CRLF` in the bottom right of the screen, click it, select `LF` and then save the file and rebuild the container.
+
 Before continuing, a few things to open and check out:
 
 1. In the `.devcontainer/devcontainer.json` the `postCreateCommand` runs the `bash` script named `post-create.sh`
@@ -179,7 +181,10 @@ Your OKD pods are securely only accessible to you, or other users you give acces
 Expose your FastAPI service externally by creating a serve and route automatically:
 
 ```bash
-oc expose svc/comp423-cicd-demo --labels=app=comp423-cicd-demo
+oc expose svc/comp423-cicd-demo \
+    --port=80 \
+    --target-port=8080 \
+    --labels=app=comp423-cicd-demo
 ```
 
 After doing so, **once your project successfully builds**, you can run the following command:
