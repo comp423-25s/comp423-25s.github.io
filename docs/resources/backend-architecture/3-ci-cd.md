@@ -181,10 +181,7 @@ Your OKD pods are securely only accessible to you, or other users you give acces
 Expose your FastAPI service externally by creating a serve and route automatically:
 
 ```bash
-oc expose svc/comp423-cicd-demo \
-    --port=80 \
-    --target-port=8080 \
-    --labels=app=comp423-cicd-demo
+oc expose svc/comp423-cicd-demo --labels=app=comp423-cicd-demo
 ```
 
 After doing so, **once your project successfully builds**, you can run the following command:
