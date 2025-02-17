@@ -9,6 +9,10 @@ hide:
 
 ### Backend Concerns: API Fundamentals and Testing
 
+#### Mon 02/17
+
+* `MT12 - Meeting` CI/CD Tutorial
+
 #### Fri 02/14
 
 * `MT12 - Meeting` [Pairing time for EX01](./meetings/2025_02_14.md)
