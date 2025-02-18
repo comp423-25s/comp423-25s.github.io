@@ -89,6 +89,8 @@ If you navigate back to the "Code" tab in GitHub, then you will also see a small
 
 Setting up deployment takes some more effort because we need to stand up a production cloud environment. Our production environment will be UNC Cloud Apps' "OKD" cluster, set up just for our course!
 
+**You need to be connected to Eduroam, or connected to [UNC VPN (instructions here)](https://ccinfo.unc.edu/start-here/secure-access-on-and-off-campus/), in order to successfully use OKD. If you are on a home network, UNC guest, or other network, be sure to connect via VPN.**
+
 Login to `OKD` by going to: <https://console.apps.unc.edu>
 
 (If your login does not succeed, it's likely because you did not previously register for Cloud Apps. You can do so by going to https://cloudapps.unc.edu/ and following the Sign Up steps. It can take up to 15 minutes following Sign Up for the OKD link above to work correctly. In the interim, feel free to follow along with your neighbor.)
@@ -176,21 +178,19 @@ Over in OKD, in the web browser, you should look to see the application appear i
 
 ### 4. Expose the Service
 
-Your OKD pods are securely only accessible to you, or other users you give access to, and not the general public. To begin the process of exposing a pod to the public, we need to register it as a "Service" in OKD and also create a route to it. The following `expose` command will take care of both and we will be able to see the route it establishes with the subsequent command.
-
-Expose your FastAPI service externally by creating a serve and route automatically:
+Your OKD pods are securely only accessible to you, or other users you give access to, and not the general public. To begin the process of exposing a pod to the public, we need to expose a route to it in OKD. The following `create route` will automatically generate a route URL securely connecting your service to the outside world:
 
 ```bash
-oc expose svc/comp423-cicd-demo --labels=app=comp423-cicd-demo
+oc create route edge --service=comp423-cicd-demo
 ```
+
+Routes can also be created with custom hostnames, but the automatic name is sufficient for this tutorial.
 
 After doing so, **once your project successfully builds**, you can run the following command:
 
 ```bash
 oc get route comp423-cicd-demo
 ```
-
-**NOTE: You will need to manually put `http://` in front of this, your browser will attempt to navigate to `https://` and the secure route is not yet setup. We will add the secure setting in the future.**
 
 What this will do is show you the public route to your app running in production. Try opening this URL in your browser or your phone. This is live on the public internet!
 
