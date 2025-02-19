@@ -11,7 +11,7 @@ hide:
 
 #### Mon 02/17
 
-* `MT12 - Meeting` CI/CD Tutorial
+* `MT12 - Meeting` [CI/CD Tutorial](./meetings/2025_02_17.md)
 
 #### Fri 02/14
 
@@ -21,7 +21,7 @@ hide:
 
 * `MT11 - Meeting` [Implementing EX01 with a Service Layer](./meetings/2025_02_12.md)
 * `RD15 - Reading` [Introduction to Testing](./resources/backend-architecture/2-testing.md) - Due: Thu 2/13
-* `EX01 - Exercise` [Phase 2. API Implementation](./resources/exercises/ex01-api-design.md#phase-ii---implementation) - ==Due: Tue 2/18==
+* `EX01 - Exercise` [Phase 2. API Implementation](./resources/exercises/ex01-api-design.md) - ==Due: Thu 2/20==
 
 #### Fri 02/07
 
