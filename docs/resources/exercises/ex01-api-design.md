@@ -415,7 +415,7 @@ jobs:
 
 At this point, you are only defining the CI job. This file will be extended to perform the CD job soon.
 
-Go ahead and create a commit on `main` and push this to your repository. Open your repository on GitHub and go to your Actions tab to see that the job runs. If you have no tests merged into your `main` branch yet there's some chance the tests fail, which is expected.
+Go ahead and create a commit on `main` and push this to your repository. Open your repository on GitHub and go to your Actions tab to see that the job runs. If you have no tests merged into your `main` branch yet then the `pytest` job will fail, which is expected. You can continue on.
 
 #### Creating a Ruleset for Continuous Integration
 
