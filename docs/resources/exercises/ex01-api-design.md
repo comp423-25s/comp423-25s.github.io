@@ -4,7 +4,7 @@
 
 Part 1. You only need to implement the route decorators and function signatures, *NOT* the actual implementation of the API.
 
-Part 2. You wll implement the API.
+Part 2. You wll implement the API and deploy it to a production environment.
 
 ## App Overview: The Pastebin + URL Shortener
 
@@ -736,6 +736,23 @@ Now your Continuous Deployment step initiates builds on _both_ teammates' cloud 
 #### Finishing up EX02
 
 ### Frequently Asked Questions
+
+#### My Github Action is Not Running or Failing, Why?
+
+If you do not see any attempts to build your Actions in the GitHub Actions tab of your repository, it is likely one of three reasons:
+
+1. You have not pushed the original action definition to `main`
+2. You have not initiated a Pull Request with the action definition and targetted `main`
+3. Your action file is improperly named. Be sure the file extension is `.yml`
+
+If your build is failing, there are likely one of two reasons. Open up the Action and dig into its details to see exactly where it fails by drilling in.
+
+1. If the validation/pytest step fails because `pytest: command not found`, it is because you are missing the `pytest` dependency in `requirements.txt`. Be sure not to skip that step (search for it in the steps above!)
+2. Your tests are failing in GitHub Actions for some reason. Drill in in to investigate and keep pushing additional commits to your PR until your tests are passing.
+
+#### Should shortened URLs redirect to the URL or just display the URL?
+
+For Cai's stories, you should be able to access the shortened URL directly in the web browser, not using `/docs` and be redirected to the URL that was shortened. You can search for FastAPI's `RedirectResponse` (and see the FAQ entry below about making sure this works in production). Note that the OpenAPI `/docs` UI will look like there is an error occuring on most redirects because it _follows_ the redirect rather than shows you the redirect response. If you see a CORS error, you're probably doing it right, but to be sure you can try accessing your URL directly (e.g. `127.0.0.1:8000/short-url`) or looking in the network tab of your browser when using the `/docs` UI. Additionally, this is a place where you should have an integration test that can confirm a redirect response is correctly being returned.
 
 #### How should you handle hostname differences between development and production?
 
