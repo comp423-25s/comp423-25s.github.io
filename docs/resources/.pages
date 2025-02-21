@@ -3,7 +3,8 @@ order: asc
 nav:
     - Resources: index.md
     - Conceptual Tutorials:
-        - Backend Architecture: backend-architecture
+        - Frontend: frontend
+        - Backend: backend-architecture
         - APIs: apis
         - git: git
         - MkDocs: MkDocs
