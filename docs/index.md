@@ -9,6 +9,17 @@ hide:
 
 ### Backend Concerns: API Fundamentals and Testing
 
+#### Fri 02/21
+
+* `MT13 - Meeting` [Front-end Tooling](./meetings/2025_02_21.md)
+* `RD16 - Reading` [Web Client Platform Background: JavaScript](./resources/frontend/1-tools.md) ==Due: Sun 2/23==
+* `RD17 - Reading` [TypeScript for the 301 Java Developer](./resources/frontend/2-typescript.md) ==Due: Sun 2/23==
+* `RD18 - Reading` [Event-Driven Programming in TypeScript](./resources/frontend/3-event-driven.md) ==Due: Sun 2/23==
+
+#### Wed 02/19
+
+* `SN00 - Snow Day` 
+
 #### Mon 02/17
 
 * `MT12 - Meeting` [CI/CD Tutorial](./meetings/2025_02_17.md)
