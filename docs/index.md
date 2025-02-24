@@ -7,22 +7,29 @@ hide:
 
 ## Schedule
 
-### Backend Concerns: API Fundamentals and Testing
+### Frontend Concerns: Scripting, Styling, and Structure
+
+#### Mon 02/24
+
+* `MT15 - Meeting` [Higher-order Functions]()
+* `RD19 - Reading` [MDN Introduction to HTML and CSS](https://gradescope.com) ==Due: Tue 2/25==
 
 #### Fri 02/21
 
-* `MT13 - Meeting` [Front-end Tooling](./meetings/2025_02_21.md)
-* `RD16 - Reading` [Web Client Platform Background: JavaScript](./resources/frontend/1-tools.md) ==Due: Sun 2/23==
-* `RD17 - Reading` [TypeScript for the 301 Java Developer](./resources/frontend/2-typescript.md) ==Due: Sun 2/23==
-* `RD18 - Reading` [Event-Driven Programming in TypeScript](./resources/frontend/3-event-driven.md) ==Due: Sun 2/23==
+* `MT14 - Meeting` [Front-end Tooling](./meetings/2025_02_21.md)
+* `RD16 - Reading` [Web Client Platform Background: JavaScript](./resources/frontend/1-tools.md) Due: Sun 2/23
+* `RD17 - Reading` [TypeScript for the 301 Java Developer](./resources/frontend/2-typescript.md) Due: Sun 2/23
+* `RD18 - Reading` [Event-Driven Programming in TypeScript](./resources/frontend/3-event-driven.md) 
 
 #### Wed 02/19
 
 * `SN00 - Snow Day` 
 
+### Backend Concerns: API Fundamentals and Testing
+
 #### Mon 02/17
 
-* `MT12 - Meeting` [CI/CD Tutorial](./meetings/2025_02_17.md)
+* `MT13 - Meeting` [CI/CD Tutorial](./meetings/2025_02_17.md)
 
 #### Fri 02/14
 
@@ -32,7 +39,7 @@ hide:
 
 * `MT11 - Meeting` [Implementing EX01 with a Service Layer](./meetings/2025_02_12.md)
 * `RD15 - Reading` [Introduction to Testing](./resources/backend-architecture/2-testing.md) - Due: Thu 2/13
-* `EX01 - Exercise` [Phase 2. API Implementation](./resources/exercises/ex01-api-design.md) - ==Due: Fri 2/21==
+* `EX01 - Exercise` [Phase 2. API Implementation](./resources/exercises/ex01-api-design.md) - Due: Fri 2/21
 
 #### Fri 02/07
 
