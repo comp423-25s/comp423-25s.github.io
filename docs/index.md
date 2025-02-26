@@ -9,10 +9,15 @@ hide:
 
 ### Frontend Concerns: Scripting, Styling, and Structure
 
+#### Mon 02/26
+
+* `MT16 - Meeting` [Lexical Closures](./meetings/2025_02_26.md)
+* `RD20 - Reading` [Angular Introduction](https://gradescope.com) ==Due: Thu 2/27==
+
 #### Mon 02/24
 
-* `MT15 - Meeting` [Higher-order Functions]()
-* `RD19 - Reading` [MDN Introduction to HTML and CSS](https://gradescope.com) ==Due: Tue 2/25==
+* `MT15 - Meeting` [Higher-order Functions](./meetings/2025_02_24.md)
+* `RD19 - Reading` [MDN Introduction to HTML and CSS](https://gradescope.com) Due: Tue 2/25
 
 #### Fri 02/21
 
