@@ -11,10 +11,10 @@ hide:
 
 #### Fri 02/28
 
-* `MT17 - Meeting` [More Closures](https://docs.google.com/presentation/d/1aZIF8xQctC69-1aRfAm2Yp65ewK10SBoP_kuwQ4UySM/edit?usp=sharing)
-* `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) ==Due: Fri 3/07==
+* `MT17 - Meeting` [More Closures](./meetings/2025_02_28.md)
 * `RD21 - Reading` [Angular Routing](https://angular.dev/guide/routing/router-tutorial) ==Due: Sun 3/02==
 * `RD22 - Reading` [RxJS Observables](https://rxjs.dev/guide/observable) ==Due: Sun 3/02==
+* `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) ==Due: Fri 3/07==
 
 #### Wed 02/26
 
