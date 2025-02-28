@@ -11,6 +11,7 @@
 
 - [EX00 - Collaborating on Technical Documentation](./MkDocs/ex00.md)
 - [EX01 - API Design with FastAPI](./exercises/ex01-api-design.md)
+- [EX02 - Angular Front-end](./exercises/ex02-ng-frontend.md)
 
 ## Course Content
 
