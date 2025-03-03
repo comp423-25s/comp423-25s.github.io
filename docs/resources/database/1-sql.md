@@ -1,20 +1,9 @@
-# Introduction to Relational Databases & SQL
+# 1. Introduction to Relational Databases & SQL
 
 ## What is a Relational Database?
 A **relational database** is a way to store and organize data in a structured format using tables. Each table consists of **rows** (records) and **columns** (fields). The power of relational databases comes from their ability to establish relationships between tables, allowing for efficient data retrieval and consistency.
 
 Unlike temporary data storage solutions, relational databases **persist data to disk**, meaning information is retained even after the database system shuts down. This persistence makes relational databases essential for applications that require long-term data storage, such as banking systems, e-commerce platforms, and content management systems.
-
-## The Importance of ACID Properties
-
-A core principle of modern relational databases is adherence to **ACID** properties, which ensure the reliability and consistency of data transactions:
-
-* **Atomicity:** Ensures that a transaction is treated as a single, indivisible unit, meaning either all of its operations succeed, or none of them take effect. This prevents data corruption in case of failures.
-* **Consistency:** Guarantees that a transaction brings the database from one valid state to another, maintaining integrity constraints at all times.
-* **Isolation:** Ensures that transactions do not interfere with each other, even when executed concurrently, preserving the integrity of data operations.
-* **Durability:** Ensures that once a transaction is committed, it remains permanently stored, even in the event of a system crash.
-
-These properties are essential for applications that require strict data accuracy, such as financial systems, inventory management, and multi-user applications where concurrent data modifications occur.
 
 ## A Brief History of Relational Databases and SQL
 The concept of **relational databases** was introduced by **Edgar F. Codd** in 1970 while working at IBM. He proposed the **relational model**, which organizes data into structured tables and uses mathematical **relational algebra** for querying and manipulating data.
@@ -32,7 +21,6 @@ Today's most popular relational databases include:
 - **SQLite** (lightweight, used in mobile and embedded systems)
 - **Microsoft SQL Server** (enterprise-level database solution)
 - **Oracle Database** (widely used in large corporations)
-
 
 ## Key Abstractions in a Relational Database
 
@@ -54,17 +42,17 @@ Some columns also have **fixed maximum widths** for storage efficiency. For exam
 
 Here is a table of common PostgreSQL data types:
 
-| Data Type    | Description |
-|-------------|------------|
-| `INTEGER`   | Whole numbers (e.g., 1, 2, 3) |
-| `SERIAL`    | Auto-incrementing integer (commonly used for primary keys) |
-| `TEXT`      | Variable-length string (unlimited size) |
-| `VARCHAR(n)` | String with a maximum length of `n` characters |
-| `BOOLEAN`   | True or False values |
-| `DATE`      | Stores dates (YYYY-MM-DD) |
-| `TIMESTAMP` | Stores date and time information |
-| `DECIMAL(p, s)` | Precise fixed-point decimal numbers |
-| `REAL` / `DOUBLE PRECISION` | Floating-point numbers |
+| Data Type                   | Description                                                |
+| --------------------------- | ---------------------------------------------------------- |
+| `INTEGER`                   | Whole numbers (e.g., 1, 2, 3)                              |
+| `SERIAL`                    | Auto-incrementing integer (commonly used for primary keys) |
+| `TEXT`                      | Variable-length string (unlimited size)                    |
+| `VARCHAR(n)`                | String with a maximum length of `n` characters             |
+| `BOOLEAN`                   | True or False values                                       |
+| `DATE`                      | Stores dates (YYYY-MM-DD)                                  |
+| `TIMESTAMP`                 | Stores date and time information                           |
+| `DECIMAL(p, s)`             | Precise fixed-point decimal numbers                        |
+| `REAL` / `DOUBLE PRECISION` | Floating-point numbers                                     |
 
 ### Rows (Records)
 A **row** represents a single entry in a table, storing a unique combination of values across all the columns. Each row corresponds to a distinct instance of the entity the table models.
@@ -92,23 +80,12 @@ class User:
 ```
 Each row in the `users` table represents a different `User` object with unique values for `id`, `name`, and `email`.
 
-### Primary and Foreign Keys
+### Primary Keys
 A **primary key** uniquely identifies each row in a table, ensuring that no two rows have the same identifier. The choice of primary key depends on the scale and nature of the data.
 
 For smaller datasets, using an `INTEGER` or `SERIAL` column as a unique ID is common. However, for very large-scale databases—such as those storing tweets, Instagram posts, or large-scale event logs—alternative schemes like **UUIDs** (Universally Unique Identifiers) or **timestamp-based IDs** are often used. These approaches provide a much larger range of unique identifiers and offer benefits such as distributed uniqueness and time-ordering properties.
 
 For our purposes, since we are working with small datasets, we will primarily use **serial integers** as primary keys.
-
-A **foreign key** establishes a relationship between two tables by linking a column in one table to the primary key of another. This ensures that the referenced data exists before any related data can be added, keeping the relationships valid.
-
-#### Why Are Foreign Keys Useful?
-Foreign keys help keep data **accurate and meaningful** by preventing orphaned records—data that doesn’t have a valid connection to other required information. They ensure that data in one table cannot reference a non-existent row in another table.
-
-Foreign keys also make **queries more efficient**. Since they enforce relationships between tables, databases can use indexes on foreign key columns to speed up searches and joins. This means that when querying related data—such as fetching all orders associated with a user—the database can quickly locate matching records instead of scanning an entire table. 
-
-Additionally, foreign keys help **maintain consistency** by automatically enforcing rules when data changes. For example, if a user is deleted, the database can be set up to either delete related orders (cascade delete) or prevent deletion if dependent records exist.
-
-By using foreign keys, relational databases keep data organized, ensure relationships are valid, and improve query performance by leveraging indexing.
 
 ## Understanding SQL: A Domain-Specific Language for Databases
 
@@ -162,7 +139,6 @@ SELECT * FROM users;
 
 By mastering both DDL and DML, you gain the ability to design, manage, and interact with relational databases effectively. Understanding these distinctions helps clarify how SQL serves both structural and operational purposes in database management.
 
-
 ## Experimenting with SQL in a PostgreSQL Docker Container
 
 To follow along with this tutorial, you can run PostgreSQL inside a **Docker container**.
@@ -194,7 +170,7 @@ When using a Docker container without explicit volume mapping, PostgreSQL stores
 For production environments, best practice is to **mount a volume** to ensure that database files persist independently of the container lifecycle. However, for simplicity in this tutorial, we are relying on the container's internal storage.
 
 ### Step 2: Connect to PostgreSQL
-To interact with the running PostgreSQL container, use the following command:
+To interact with the running PostgreSQL container, use the following command which runs the CLI `psql` Postgres client:
 
 ```sh
 docker exec \
@@ -322,55 +298,8 @@ SELECT * FROM users ORDER BY name ASC;
 SELECT * FROM users ORDER BY created_at DESC LIMIT 1;
 ```
 
-## Creating a Table with Relationships
-
-To model relationships, we use **foreign keys**. Let's say we have an `orders` table that references `users`:
-
-```sql
-CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    total_price DECIMAL(10,2) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-#### Explanation:
-- `user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE` → Ensures each order belongs to a valid user.
-- `ON DELETE CASCADE` → If a user is deleted, their orders are automatically removed.
-
-### Inserting Data into Related Tables
-We can now add orders for users:
-
-```sql
-INSERT INTO orders (user_id, total_price) VALUES (1, 25.50);
-INSERT INTO orders (user_id, total_price) VALUES (2, 15.75);
-INSERT INTO orders (user_id, total_price) VALUES (1, 45.00);
-```
-
-### Querying with `JOIN`
-To fetch orders along with user names:
-
-```sql
-SELECT orders.id, users.name, orders.total_price, orders.created_at
-FROM orders
-JOIN users ON orders.user_id = users.id;
-```
-
-#### Example Output:
-| id | name    | total_price | created_at          |
-|----|--------|------------|---------------------|
-| 1  | Alice  | 25.50      | 2025-03-02 13:00:00 |
-| 2  | Bob    | 15.75      | 2025-03-02 13:05:00 |
-| 3  | Alice  | 45.00      | 2025-03-02 13:10:00 |
-
-This retrieves **orders** along with the **user who placed them**.
-
-With these additions, students get a more complete and practical introduction to SQL!
-
 ## Conclusion
 
-In this chapter, we explored the fundamentals of relational databases and SQL. We introduced relational databases, the importance of ACID properties, and the evolution of SQL. We then covered key relational database concepts, including tables, columns, rows, primary keys, and foreign keys. Additionally, we demonstrated SQL queries for creating tables, inserting data, retrieving data using SELECT, filtering with WHERE, sorting, limiting results, and using JOIN to retrieve data across related tables.
+In this chapter, we explored the fundamentals of relational databases and SQL. We then covered key relational database concepts, including tables, columns, rows, and primary keys. Additionally, we demonstrated SQL queries for creating tables, inserting data, retrieving data using SELECT, filtering with WHERE, sorting, and limiting results.
 
-Understanding relational databases and SQL is crucial for managing structured data efficiently. By mastering these fundamental concepts, you are well-equipped to design, query, and manipulate databases effectively, forming a strong foundation for working with modern data-driven applications.
-
+Understanding relational databases and SQL is useful for managing and persisting structured data efficiently. In the next reading, we will look at creating relationships between tables with foreign keys and introducing the concept of _transactions_. Each of these concepts is an important feature of a relational database system.

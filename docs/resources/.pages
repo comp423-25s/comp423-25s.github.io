@@ -3,6 +3,7 @@ order: asc
 nav:
     - Resources: index.md
     - Conceptual Tutorials:
+        - Database: database
         - Frontend: frontend
         - Backend: backend-architecture
         - APIs: apis
