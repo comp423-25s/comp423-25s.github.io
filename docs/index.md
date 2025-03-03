@@ -9,6 +9,11 @@ hide:
 
 ### Frontend Concerns: Scripting, Styling, and Structure
 
+#### Mon 03/03
+
+* `MT18 - Meeting` []()
+* `RD23 - Reading` [Introduction to SQL](./resources/database/1-sql.md) ==Due: Tue 3/04==
+
 #### Fri 02/28
 
 * `MT17 - Meeting` [More Closures](./meetings/2025_02_28.md)
