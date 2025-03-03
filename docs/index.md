@@ -11,20 +11,20 @@ hide:
 
 #### Mon 03/03
 
-* `MT18 - Meeting` []()
+* `MT18 - Meeting` [Syntactic Sugar: Destructuring, Rest, and Spread](./meetings/2025_03_03.md)
 * `RD23 - Reading` [Introduction to SQL](./resources/database/1-sql.md) ==Due: Tue 3/04==
 
 #### Fri 02/28
 
 * `MT17 - Meeting` [More Closures](./meetings/2025_02_28.md)
-* `RD21 - Reading` [Angular Routing](https://angular.dev/guide/routing/router-tutorial) ==Due: Sun 3/02==
-* `RD22 - Reading` [RxJS Observables](https://rxjs.dev/guide/observable) ==Due: Sun 3/02==
+* `RD21 - Reading` [Angular Routing](https://angular.dev/guide/routing/router-tutorial) Due: Sun 3/02
+* `RD22 - Reading` [RxJS Observables](https://rxjs.dev/guide/observable) Due: Sun 3/02
 * `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) ==Due: Fri 3/07==
 
 #### Wed 02/26
 
 * `MT16 - Meeting` [Lexical Closures](./meetings/2025_02_26.md)
-* `RD20 - Reading` [Angular Introduction](https://gradescope.com) ==Due: Thu 2/27==
+* `RD20 - Reading` [Angular Introduction](https://gradescope.com) Due: Thu 2/27
 
 #### Mon 02/24
 
