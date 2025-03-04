@@ -1,4 +1,4 @@
-# Part 5. Toward Designing and Formally Specifying APIs
+# 5. Toward Designing and Formally Specifying APIs
 
 Now that you have seen the key elements of HTTP at a conceptual level, across the entire request-response journey, let's focus in on how API designers generally use the inputs from a request. Additionally, let's look at how responses are designed.
 

@@ -1,4 +1,4 @@
-# Communicating for Shared Understanding between Humans and Systems (APIs)
+# 0. Communicating for Shared Understanding between Humans and Systems (APIs)
 
 **Communication is the foundation of software engineering.** It’s what allows groups of people with different roles, expertise, and perspectives to come together to achieve something bigger than any one person could accomplish alone. Whether it’s a product manager explaining a feature request to an engineering team, designers aligning with software engineers to bring a vision to life, or site reliability engineers ensuring seamless deployments, every step of the software development life cycle (SDLC) relies on effective communication. 
 

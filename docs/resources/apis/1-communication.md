@@ -1,4 +1,4 @@
-# Part 1. Communication in the Software Development Lifecycle
+# 1. Communication in the Software Development Lifecycle
 
 Effective communication is critical throughout the software development life cycle (SDLC). Whether a client is requesting a feature or multiple teams are collaborating on a project, intentional communication strategies help ensure that everyone remains on the same page. Poor communication, on the other hand, can lead to misunderstandings, delays, and even project failure.
 

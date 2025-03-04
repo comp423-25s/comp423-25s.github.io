@@ -1,4 +1,4 @@
-# Part 3. Human Communication and API Design: A Shared Foundation
+# 3. Human Communication and API Design: A Shared Foundation
 
 Building on the importance of communication in the software development life cycle, we now turn our attention to APIs—**Application Programming Interfaces**. Just as intentional communication strategies help teams of humans align and collaborate, APIs serve as the structured communication layer that allows different software systems to work together effectively.
 

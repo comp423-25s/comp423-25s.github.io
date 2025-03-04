@@ -1,4 +1,4 @@
-# Part 6. FastAPI and Pydantic Tutorial
+# 6. FastAPI and Pydantic Tutorial
 
 FastAPI is a modern, fast (high-performance), standards-first web framework for Python.
 It's designed around modern Python features such as type annotations (like you used in COMP110). FastAPI helps you both _specify_ and build RESTful HTTP APIs quickly.

@@ -1,2 +1,15 @@
 title: Resources
 order: asc
+nav:
+    - Resources: index.md
+    - Conceptual Tutorials:
+        - Database: database
+        - Frontend: frontend
+        - Backend: backend-architecture
+        - APIs: apis
+        - git: git
+        - MkDocs: MkDocs
+    - Course Content:
+        - syllabus.md
+        - team.md
+        - playlist.md
