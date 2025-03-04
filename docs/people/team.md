@@ -64,11 +64,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Shaina Patel__](../people/bios/other_about.md)
 
--   ![Sunny Wang photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Sunny Wang photo](../people/profile_photos/xsw.jpg)
 
     ---
 
-    [__Sunny Wang__](../people/bios/other_about.md)
+    [__Sunny Wang__](../people/bios/xsw_about.md)
 
 -   ![Amy Xu photo](../people/profile_photos/cn_tower.jpeg)
 
