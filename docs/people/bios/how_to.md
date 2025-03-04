@@ -15,6 +15,7 @@
 
     [__YOUR NAME__](../people/bios/<MD name from Step 2>)
 ```
+    * Note: there are placeholders for every TA, so this step should just involve linking the bio page and profile photo.
 4. Run `mkdocs serve` to confirm your info card and bio page have been added.
     * Navigate to the **People** tab and click on your card's name. You should be redirected to an empty bio page with your name.
 5. Customize your bio page! Just make sure to include your name and profile photo at the top. You can search for other bios with the left navbar or using the Search bar at top right.
