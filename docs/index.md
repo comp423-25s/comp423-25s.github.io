@@ -9,6 +9,10 @@ hide:
 
 ### Frontend Concerns: Scripting, Styling, and Structure
 
+#### Wed 03/05
+
+* `MT19 - Meeting` [Metaprogramming with Decorators and `@Annotations`](./meetings/2025_03_05.md)
+
 #### Mon 03/03
 
 * `MT18 - Meeting` [Syntactic Sugar: Destructuring, Rest, and Spread](./meetings/2025_03_03.md)
