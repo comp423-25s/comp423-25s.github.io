@@ -76,11 +76,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Amy Xu__](../people/bios/other_about.md)
 
--   ![Will Zahrt photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Will Zahrt photo](../people/profile_photos/wzahrt.jpeg)
 
     ---
 
-    [__Will Zahrt__](../people/bios/other_about.md)
+    [__Will Zahrt__](../people/bios/wzahrt_about.md)
 
 -   ![Alanna Zhang photo](../people/profile_photos/alanna26.JPEG)  
 
