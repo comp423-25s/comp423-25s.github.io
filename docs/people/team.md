@@ -10,11 +10,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Kiernan Almand__](../people/bios/other_about.md)
 
--   ![Mitchell Anderson photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Mitchell Anderson photo](../people/profile_photos/amitche.jpeg)
 
     ---
 
-    [__Mitchell Anderson__](../people/bios/other_about.md)
+    [__Mitchell Anderson__](../people/bios/amitche_about.md)
 
 -   ![Ife Babarinde photo](../people/profile_photos/cn_tower.jpeg)
 
