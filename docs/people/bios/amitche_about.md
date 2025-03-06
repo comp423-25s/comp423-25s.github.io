@@ -10,7 +10,7 @@ Hi everyone! Thanks for checking out my bio! As you may already know, my name is
 
 Other than computer science, I enjoy working out, mountain biking, skiing, hanging with friends, and watching UNC Basketball. I also enjoy a good fortnite game from time to time. 
 
-Feel free to connect with me and ask me any questions abour projects, software engineering, or anythign else that might pique your interest. I'm looking forwaard to meeting you all!
+Feel free to connect with me and ask me any questions abour projects, software engineering, or anything else that might pique your interest. I'm looking forwaard to meeting you all!
 
 
 ## Where to Find Me
