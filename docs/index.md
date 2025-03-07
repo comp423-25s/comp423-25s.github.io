@@ -9,6 +9,10 @@ hide:
 
 ### Frontend Concerns: Scripting, Styling, and Structure
 
+#### Fri 03/07
+
+* `MT20 - Meeting` [Intentional Debugging Strategies](./meetings/2025_03_07.md)
+
 #### Wed 03/05
 
 * `MT19 - Meeting` [Metaprogramming with Decorators and `@Annotations`](./meetings/2025_03_05.md)
@@ -16,7 +20,7 @@ hide:
 #### Mon 03/03
 
 * `MT18 - Meeting` [Syntactic Sugar: Destructuring, Rest, and Spread](./meetings/2025_03_03.md)
-* `RD23 - Reading` [Introduction to SQL](./resources/database/1-sql.md) ==Due: Tue 3/04==
+* `RD23 - Reading` [Introduction to SQL](./resources/database/1-sql.md) Due: Tue 3/04
 
 #### Fri 02/28
 
