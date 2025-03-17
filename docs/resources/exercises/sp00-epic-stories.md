@@ -1,6 +1,10 @@
+# Sprint 0 - Week 0 - An Epic Tale of Short Stories
+
 ## Agile Team Kickoff: Feature Design Document
 
-Your team will collaborate to create an initial design document outlining your feature. This task will guide your team through the first Agile sprint and help you clearly define your project's scope, purpose, and value. Begin by creating a shared Google Doc for initial brainstorming and drafting. Ultimately, this document will be converted into a markdown file (`feature-design.md`) in your team's repository under the `docs` directory.
+Your team will collaborate to create an initial design document outlining the _epic_ of your feature. This task will guide your team through the planning of first Agile sprint and help you clearly define your project's scope, purpose, and value. Begin by creating a shared Google Doc for initial brainstorming and drafting. Ultimately, this document will be converted into a markdown file (`feature-design.md`) in your team's repository under the `docs` directory.
+
+For features, please see our [Call for Projects](./sp00-cfp.md) this Spring 2025. We are integrating AI functionality into the CSXL web application! All features must utilize the OpenAI LLM API in some way that adds intelligence to <csxl.unc.edu>.
 
 **Important Note on AI:**  
 Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting your design document. This exercise focuses on teamwork, critical thinking, communication, and a thorough understanding of the problem you aim to solve. Detection of generative AI writing in submissions risks a team score of 0% for this sprint.
@@ -11,7 +15,7 @@ Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting yo
 
 #### 1. Title & Team
 - Create a descriptive, engaging title for your feature. You are encouraged to go beyond the original RFP title.
-- Clearly list all team members with their full names.
+- Clearly list all team members with their full names and links to their GitHub repositories.
 
 #### 2. Overview
 - Clearly restate the purpose, value, and context of your chosen feature.
@@ -29,13 +33,15 @@ Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting yo
 - Write user stories following this template:
   
   ```
-  As a [persona], I want [to perform some action] so that [I can achieve some goal or benefit].
+  As a [persona], I want [to perform some action] 
+  so that [I can achieve some goal or benefit].
 
   Acceptance Criteria:
-  - Clear, testable criteria describing what successfully completing this story looks like.
+  - Clear, testable criteria describing what completing this story looks like.
   - Criteria 2
   - Criteria 3 (as necessary)
   ```
+
 - Organize user stories by persona and prioritize them by:
     - Necessity (Essential for minimum viable product? Nice-to-have?)
     - Frequency of use (Daily, weekly, occasional?)
@@ -44,7 +50,7 @@ Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting yo
 
 #### 5. Wireframes / Mockups
 - For each critical user story, create clear, detailed wireframes/mockups.
-- Use Figma and Material UI components as shown in class to ensure consistency and professional appearance.
+- Use Figma to produce lo-fidelity wireframes/prototypes to ensure consistency and a professional appearance.
 - Include a brief but clear explanation beneath each wireframe:
     - What interaction is happening?
     - What action(s) are users performing?

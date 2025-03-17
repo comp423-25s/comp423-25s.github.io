@@ -7,6 +7,18 @@ hide:
 
 ## Schedule
 
+### Agile Project Planning
+
+#### Mon 03/17
+
+* `MT21 - Meeting` [Final Project Kick-off](./meetings/2025_03_17.md)
+* `RD24 - Reading` [Agile Epics](https://www.atlassian.com/agile/project-management/epics) ==Due: Tue 3/18==
+* `RD25 - Reading` [Agile Stories](https://www.atlassian.com/agile/project-management/user-stories) ==Due: Tue 3/18==
+* `SP00 - Sprint` - First Sprint of Final Project
+    * [Final Project Teams](https://docs.google.com/spreadsheets/d/17hDPg7UlSqmrmPqvYOTcOW5oIE4Za4ICIRfXCZrzjq4/edit?usp=sharing)
+    * [Sprint 0 - Call for Proposals](./resources/exercises/sp00-cfp.md)
+    * [Sprint 0 - Write an Epic](./resources/exercises/sp00-epic-stories.md) ==Due: Sun 3/23==
+
 ### Frontend Concerns: Scripting, Styling, and Structure
 
 #### Fri 03/07
@@ -27,7 +39,7 @@ hide:
 * `MT17 - Meeting` [More Closures](./meetings/2025_02_28.md)
 * `RD21 - Reading` [Angular Routing](https://angular.dev/guide/routing/router-tutorial) Due: Sun 3/02
 * `RD22 - Reading` [RxJS Observables](https://rxjs.dev/guide/observable) Due: Sun 3/02
-* `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) ==Due: Fri 3/07==
+* `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) Due: Fri 3/07
 
 #### Wed 02/26
 
