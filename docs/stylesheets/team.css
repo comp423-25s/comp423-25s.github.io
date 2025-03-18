@@ -6,3 +6,9 @@
   object-fit: cover;
   width: 300px;
 }
+
+.link-card {
+  width: 100px;
+  border: 1px white;
+  height: auto;
+}
