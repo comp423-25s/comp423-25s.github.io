@@ -22,11 +22,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Ife Babarinde__](../people/bios/other_about.md)
 
--   ![Alicia Bao photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Alicia Bao photo](../people/profile_photos/albao.jpg)
 
     ---
 
-    [__Alicia Bao__](../people/bios/other_about.md)
+    [__Alicia Bao__](../people/bios/albao_about.md)
 
 -   ![Bernie Chen photo](../people/profile_photos/cn_tower.jpeg)
 
