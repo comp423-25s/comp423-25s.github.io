@@ -3,6 +3,7 @@ order: asc
 nav:
     - Resources: index.md
     - Conceptual Tutorials:
+        - Project Management: project-management
         - Database: database
         - Frontend: frontend
         - Backend: backend-architecture
