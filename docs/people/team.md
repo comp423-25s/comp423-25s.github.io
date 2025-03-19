@@ -58,11 +58,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Embrey Morton__](../people/bios/embreezy_about.md)
 
--   ![Shaina Patel photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Shaina Patel photo](../people/profile_photos/shainap.jpg)
 
     ---
 
-    [__Shaina Patel__](../people/bios/other_about.md)
+    [__Shaina Patel__](../people/bios/shainap_about.md)
 
 -   ![Sunny Wang photo](../people/profile_photos/xsw.jpg)
 
