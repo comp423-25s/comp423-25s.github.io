@@ -9,11 +9,17 @@ hide:
 
 ### Agile Project Planning
 
+#### Wed 03/19
+
+* `MT22 - Meeting` [Wireframes](./meetings/2025_03_19.md)
+* `RD26 - Reading` [CSXL Dev Env Setup](https://github.com/unc-csxl/csxl.unc.edu/blob/main/docs/get_started.md) ==Due: Thu 3/20==
+* `RD27 - Reading` [Wireframes](./resources/project-management/wireframes.md) ==Due: Thu 3/20==
+
 #### Mon 03/17
 
 * `MT21 - Meeting` [Final Project Kick-off](./meetings/2025_03_17.md)
-* `RD24 - Reading` [Agile Epics](https://www.atlassian.com/agile/project-management/epics) ==Due: Tue 3/18==
-* `RD25 - Reading` [Agile Stories](https://www.atlassian.com/agile/project-management/user-stories) ==Due: Tue 3/18==
+* `RD24 - Reading` [Agile Epics](https://www.atlassian.com/agile/project-management/epics) Due: Tue 3/18
+* `RD25 - Reading` [Agile Stories](https://www.atlassian.com/agile/project-management/user-stories) Due: Tue 3/18
 * `SP00 - Sprint` - First Sprint of Final Project
     * [Final Project Teams](https://docs.google.com/spreadsheets/d/17hDPg7UlSqmrmPqvYOTcOW5oIE4Za4ICIRfXCZrzjq4/edit?usp=sharing)
     * [Sprint 0 - Call for Proposals](./resources/exercises/sp00-cfp.md)

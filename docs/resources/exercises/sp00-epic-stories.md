@@ -48,13 +48,14 @@ Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting yo
     - Importance to user value
 - Clearly label and separate your stories by persona for clarity.
 
-#### 5. Wireframes / Mockups
-- For each critical user story, create clear, detailed wireframes/mockups.
+#### 5. Wireframes / Mockups / Sample Interactions
+- For each critical user story, create clear wireframes.
 - Use Figma to produce lo-fidelity wireframes/prototypes to ensure consistency and a professional appearance.
 - Include a brief but clear explanation beneath each wireframe:
     - What interaction is happening?
     - What action(s) are users performing?
     - What is the outcome or expected result?
+- For interactions where there is natural language or integration with the large-language model, provide samples of what the user might prompt with and the expected response (either language or UI) of the system.
 
 ---
 
