@@ -52,11 +52,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Andrew Lockard__](../people/bios/other_about.md)
 
--   ![Embrey Morton photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Embrey Morton photo](../people/profile_photos/embreezy.jpg)
 
     ---
 
-    [__Embrey Morton__](../people/bios/other_about.md)
+    [__Embrey Morton__](../people/bios/embreezy_about.md)
 
 -   ![Shaina Patel photo](../people/profile_photos/cn_tower.jpeg)
 
