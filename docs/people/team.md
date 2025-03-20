@@ -46,11 +46,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Katie Fort__](../people/bios/other_about.md)
 
--   ![Andrew Lockard photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Andrew Lockard photo](../people/profile_photos/alockard.JPG)
 
     ---
 
-    [__Andrew Lockard__](../people/bios/other_about.md)
+    [__Andrew Lockard__](../people/bios/alockard_about.md)
 
 -   ![Embrey Morton photo](../people/profile_photos/embreezy.jpg)
 
