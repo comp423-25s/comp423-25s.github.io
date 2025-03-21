@@ -4,11 +4,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
 <div id="TA-team" class="grid cards" markdown>
 
--   ![Kiernan Almand photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Kiernan Almand photo](../people/profile_photos/kalmand.jpeg)
 
     ---
 
-    [__Kiernan Almand__](../people/bios/other_about.md)
+    [__Kiernan Almand__](../people/bios/kiernana_about.md)
 
 -   ![Mitchell Anderson photo](../people/profile_photos/amitche.jpeg)
 
