@@ -49,13 +49,14 @@ Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting yo
 - Clearly label and separate your stories by persona for clarity.
 
 #### 5. Wireframes / Mockups / Sample Interactions
-- For each critical user story, create clear wireframes.
-- Use Figma to produce lo-fidelity wireframes/prototypes to ensure consistency and a professional appearance.
+- For your top 3 critical user stories, create clear wireframes illustrating each step of the story.
+    - If your feature involves content managed by instructors, CSXL staff, career services, etc., then one of your top stories should also include what the process looks like for this persona to add and edit this content.
+- Use Figma to produce mid-fidelity wireframes/prototypes to ensure consistency and a professional appearance. Export your Figma frames and add them to your epic design document.
 - Include a brief but clear explanation beneath each wireframe:
     - What interaction is happening?
     - What action(s) are users performing?
     - What is the outcome or expected result?
-- For interactions where there is natural language or integration with the large-language model, provide samples of what the user might prompt with and the expected response (either language or UI) of the system.
+- For interactions where there is natural language or integration with the large-language model, provide two to threee different samples of what the user might prompt with and a reasonable response to expect (either language or UI) from the system.
 
 ---
 
@@ -71,4 +72,4 @@ Generative AI tools (e.g., ChatGPT, Bard) are strictly prohibited in crafting yo
 
     - Be written in your own words—no AI-generated content.
     - Clearly demonstrate a thoughtful understanding of user needs, product vision, and realistic implementation.
-    - Be neatly organized, professionally formatted, and submitted as a markdown file in your team's repository (`feature-design.md`).
+    - Be neatly organized, professionally formatted, and submitted as a PDF.
