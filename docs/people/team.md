@@ -70,11 +70,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Sunny Wang__](../people/bios/xsw_about.md)
 
--   ![Amy Xu photo](../people/profile_photos/cn_tower.jpeg)
+- ![Amy Xu photo](../people/profile_photos/axu1.jpg)
 
     ---
 
-    [__Amy Xu__](../people/bios/other_about.md)
+  [__Amy Xu__](../people/bios/axu1_about.md)
 
 -   ![Will Zahrt photo](../people/profile_photos/wzahrt.jpeg)
 
