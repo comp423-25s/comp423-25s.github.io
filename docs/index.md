@@ -9,10 +9,15 @@ hide:
 
 ### Agile Project Planning
 
+#### Mon 03/24
+
+* `MT24 - Meeting` [Interactive Prototypes](./meetings/2025_03_24.md)
+* `SP00 - Sprint` [Sprint 0 - Week 1 - Interactive Prototypes and API Scaffolding](./resources/exercises/sp00-api-spec.md) ==Due: Sun 3/30==
+
 #### Fri 03/21
 
 * `MT23 - Meeting` [Figma and Epic Working Day](./meetings/2025_03_21.md)
-* `RD28 - Reading` [SQLAlchemy Tutorial 0-2](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) ==Due: Sun 3/23==
+* `RD28 - Reading` [SQLAlchemy Tutorial 0-2](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) Due: Sun 3/23
 * `RD29 - Reading` [SQLAlchemy Tutorial 3-5](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) ==Due: Tue 3/25==
 
 #### Wed 03/19
@@ -29,7 +34,7 @@ hide:
 * `SP00 - Sprint` - First Sprint of Final Project
     * [Final Project Teams](https://docs.google.com/spreadsheets/d/17hDPg7UlSqmrmPqvYOTcOW5oIE4Za4ICIRfXCZrzjq4/edit?usp=sharing)
     * [Sprint 0 - Call for Proposals](./resources/exercises/sp00-cfp.md)
-    * [Sprint 0 - Write an Epic](./resources/exercises/sp00-epic-stories.md) ==Due: Sun 3/23==
+    * [Sprint 0 - Write an Epic](./resources/exercises/sp00-epic-stories.md) Due: Sun 3/23
 
 ### Frontend Concerns: Scripting, Styling, and Structure
 
