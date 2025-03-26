@@ -71,6 +71,28 @@ On Wednesday, we'll provide instructions for setting up your team's project boar
     - Code quality through continuous peer review.
     - Your shared understanding of the codebase and collaborative skills.
 
+### Team Project Setup
+
+Your team will share a GitHub repository for collaboration. This repository is where you all will create pull requests, perform code review, and establish a continuous deployment pipeline (next sprint).
+
+1. To get started, designate one member of your team to establish the repository. This member will create a new team named after your assigned team table, e.g. **Team A1** if you are assigned table A1. See the [teams sheet](https://docs.google.com/spreadsheets/d/17hDPg7UlSqmrmPqvYOTcOW5oIE4Za4ICIRfXCZrzjq4/edit?gid=0#gid=0) to verify your team table. Then, follow [this link to establish your team](https://classroom.github.com/a/ZpRSh22I) and create a blank, starter repository. Once this is completed, other members of team should join the team and the repository.
+
+2. Another member of the team should be designated for the initial repository push. This team member should have already joined the team and should be able to see the blank repository accepting the assignment resulted in on GitHub (named after your team table). As part of RD26, you setup a local development environment for the CSXL. You should open that dev container and go ahead and pull from origin one more time to get the latest updates from the upstream CSXL repository. Go ahead and _remove_ the remote repository named `origin` from your repository. Then, add a new remote repository named `origin` that is directed at the `https://github.com` URL of your final project. Go ahead and push `main` to `origin` and confirm that your team's repository now has the complete history of the CSXL repo in it. You will see a latest commit from your TA Andrew (`ItIsAndrewL`) as the most recent commit with ID prefix `a46bf64`.
+
+3. After completing step 2, all other members of the team should update their local CSXL development environment to remove the git `origin` remote and establish a new remote, named `origin`, that points to your team's GitHub repository (use the `https://github.com` URL). After doing so, you should be able to perform `git pull origin main` and it succeed. Additionally, you can verify correctness by running `git remote show origin` to see that it is pointed to your team's repository and not the official CSXL repository.
+
+4. Only after everyone has successfully completed step 3, a third member of your team should establish a project board for your team.
+    1. Begin by opening you your team repo (`comp423-25s/csxl-team-XN` where `XN` is your table number, like `a1`). 
+    2. Be sure you do this from your team's repository page! From this page, click the `Projects` tab. Click `New Project`. 
+    3. From the modal with templates, select `Featured` and then select the `Kanban` template. 
+    4. Name the project "Team XN Project Board", where XN is your table. 
+    5. Finally, press the ellipses `...` in the top right corner, beneat your profile photo, and select **Settings**. 
+    6. Click **Manage Access** and under "Invite Collaborators", search for your team, select it, make the role Admin, and click Invite.
+
+5. After completing step 4, other members of the team should verify they are able to access the team project board by going to the repository on GitHub, clicking the Projects tab, seeing the project show up there and able to navigate to it.
+
+We will discuss setting up your project board in class on Friday 3/28.
+ 
 ### Submission & Demonstration
 
 - Continue updating your original design document.
