@@ -34,11 +34,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Bernie Chen__](../people/bios/other_about.md)
 
--   ![Benjamin Eldridge photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Benjamin Eldridge photo](../people/profile_photos/benjaben.png)
 
     ---
 
-    [__Benjamin Eldridge__](../people/bios/other_about.md)
+    [__Benjamin Eldridge__](../people/bios/benjaben_about.md)
 
 -   ![Katie Fort photo](../people/profile_photos/cn_tower.jpeg)
 
