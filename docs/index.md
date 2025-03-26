@@ -9,6 +9,11 @@ hide:
 
 ### Agile Project Planning
 
+#### Wed 03/26
+
+* `MT25 - Meeting` [Career Planning](./meetings/2025_03_26.md)
+* `RD30 - Reading` [Team Repo Setup](https://comp423-25s.github.io/resources/exercises/sp00-api-spec/#team-project-setup) ==Due: Thu 3/26==
+
 #### Mon 03/24
 
 * `MT24 - Meeting` [Interactive Prototypes](./meetings/2025_03_24.md)
@@ -18,7 +23,7 @@ hide:
 
 * `MT23 - Meeting` [Figma and Epic Working Day](./meetings/2025_03_21.md)
 * `RD28 - Reading` [SQLAlchemy Tutorial 0-2](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) Due: Sun 3/23
-* `RD29 - Reading` [SQLAlchemy Tutorial 3-5](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) ==Due: Tue 3/25==
+* `RD29 - Reading` [SQLAlchemy Tutorial 3-5](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) Due: Tue 3/25
 
 #### Wed 03/19
 
