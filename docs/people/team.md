@@ -28,11 +28,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Alicia Bao__](../people/bios/albao_about.md)
 
--   ![Bernie Chen photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Bernie Chen photo](../people/profile_photos/bscc.jpg)
 
     ---
 
-    [__Bernie Chen__](../people/bios/other_about.md)
+    [__Bernie Chen__](../people/bios/bscc_about.md)
 
 -   ![Benjamin Eldridge photo](../people/profile_photos/benjaben.png)
 
