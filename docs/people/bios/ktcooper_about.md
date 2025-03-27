@@ -15,7 +15,7 @@ In my free time, I love going on walks, cooking, doing yoga, and reading. I also
 
 <div class="grid cards" markdown>
 
--   [LinkedIn](www.linkedin.com/in/kathleen-fort-1323461b8){:target="_blank"}
+-   [LinkedIn](https://www.linkedin.com/in/kathleen-fort-1323461b8/){:target="_blank"}
 -   [GitHub](https://github.com/katie-cooper){:target="_blank"}
 
 </div>
