@@ -7,19 +7,61 @@ hide:
 
 ## Schedule
 
+### Agile Project Planning
+
+#### Wed 03/26
+
+* `MT25 - Meeting` [Career Planning](./meetings/2025_03_26.md)
+* `RD30 - Reading` [Team Repo Setup](https://comp423-25s.github.io/resources/exercises/sp00-api-spec/#team-project-setup) ==Due: Thu 3/26==
+
+#### Mon 03/24
+
+* `MT24 - Meeting` [Interactive Prototypes](./meetings/2025_03_24.md)
+* `SP00 - Sprint` [Sprint 0 - Week 1 - Interactive Prototypes and API Scaffolding](./resources/exercises/sp00-api-spec.md) ==Due: Sun 3/30==
+
+#### Fri 03/21
+
+* `MT23 - Meeting` [Figma and Epic Working Day](./meetings/2025_03_21.md)
+* `RD28 - Reading` [SQLAlchemy Tutorial 0-2](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) Due: Sun 3/23
+* `RD29 - Reading` [SQLAlchemy Tutorial 3-5](https://github.com/unc-csxl/orientation/tree/main/sqlalchemy) Due: Tue 3/25
+
+#### Wed 03/19
+
+* `MT22 - Meeting` [Wireframes](./meetings/2025_03_19.md)
+* `RD26 - Reading` [CSXL Dev Env Setup](https://github.com/unc-csxl/csxl.unc.edu/blob/main/docs/get_started.md) Due: Thu 3/20
+* `RD27 - Reading` [Wireframes](./resources/project-management/wireframes.md) Due: Thu 3/20
+
+#### Mon 03/17
+
+* `MT21 - Meeting` [Final Project Kick-off](./meetings/2025_03_17.md)
+* `RD24 - Reading` [Agile Epics](https://www.atlassian.com/agile/project-management/epics) Due: Tue 3/18
+* `RD25 - Reading` [Agile Stories](https://www.atlassian.com/agile/project-management/user-stories) Due: Tue 3/18
+* `SP00 - Sprint` - First Sprint of Final Project
+    * [Final Project Teams](https://docs.google.com/spreadsheets/d/17hDPg7UlSqmrmPqvYOTcOW5oIE4Za4ICIRfXCZrzjq4/edit?usp=sharing)
+    * [Sprint 0 - Call for Proposals](./resources/exercises/sp00-cfp.md)
+    * [Sprint 0 - Write an Epic](./resources/exercises/sp00-epic-stories.md) Due: Sun 3/23
+
 ### Frontend Concerns: Scripting, Styling, and Structure
+
+#### Fri 03/07
+
+* `MT20 - Meeting` [Intentional Debugging Strategies](./meetings/2025_03_07.md)
+
+#### Wed 03/05
+
+* `MT19 - Meeting` [Metaprogramming with Decorators and `@Annotations`](./meetings/2025_03_05.md)
 
 #### Mon 03/03
 
 * `MT18 - Meeting` [Syntactic Sugar: Destructuring, Rest, and Spread](./meetings/2025_03_03.md)
-* `RD23 - Reading` [Introduction to SQL](./resources/database/1-sql.md) ==Due: Tue 3/04==
+* `RD23 - Reading` [Introduction to SQL](./resources/database/1-sql.md) Due: Tue 3/04
 
 #### Fri 02/28
 
 * `MT17 - Meeting` [More Closures](./meetings/2025_02_28.md)
 * `RD21 - Reading` [Angular Routing](https://angular.dev/guide/routing/router-tutorial) Due: Sun 3/02
 * `RD22 - Reading` [RxJS Observables](https://rxjs.dev/guide/observable) Due: Sun 3/02
-* `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) ==Due: Fri 3/07==
+* `EX02 - Exercise` [Front-end with Angular](./resources/exercises/ex02-ng-frontend.md) Due: Fri 3/07
 
 #### Wed 02/26
 
