@@ -16,11 +16,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Mitchell Anderson__](../people/bios/amitche_about.md)
 
--   ![Ife Babarinde photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Ife Babarinde photo](../people/profile_photos/ifebaba.jpeg)
 
     ---
 
-    [__Ife Babarinde__](../people/bios/other_about.md)
+    [__Ife Babarinde__](../people/bios/ifebaba_about.md)
 
 -   ![Alicia Bao photo](../people/profile_photos/albao.jpg)
 
@@ -70,11 +70,13 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Sunny Wang__](../people/bios/xsw_about.md)
 
+
 - ![Amy Xu photo](../people/profile_photos/axu1.jpg)
 
     ---
+    
+    [__Amy Xu__](../people/bios/axu1_about.md)
 
-  [__Amy Xu__](../people/bios/axu1_about.md)
 
 -   ![Will Zahrt photo](../people/profile_photos/wzahrt.jpeg)
 
