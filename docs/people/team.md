@@ -40,11 +40,11 @@ COMP423 would not be possible without the substantial contributions of these Und
 
     [__Benjamin Eldridge__](../people/bios/benjaben_about.md)
 
--   ![Katie Fort photo](../people/profile_photos/cn_tower.jpeg)
+-   ![Katie Fort photo](../people/profile_photos/ktcooper.jpg)
 
     ---
 
-    [__Katie Fort__](../people/bios/other_about.md)
+    [__Katie Fort__](../people/bios/ktcooper_about.md)
 
 -   ![Andrew Lockard photo](../people/profile_photos/alockard.JPG)
 
@@ -74,7 +74,7 @@ COMP423 would not be possible without the substantial contributions of these Und
 - ![Amy Xu photo](../people/profile_photos/axu1.jpg)
 
     ---
-    
+
     [__Amy Xu__](../people/bios/axu1_about.md)
 
 
