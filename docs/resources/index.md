@@ -16,5 +16,5 @@
 ## Course Content
 
 - [Syllabus](./syllabus.md)
-- [Team](./team.md)
+- [Team](../people/team.md)
 - [Playlists](./playlist.md)

@@ -3,14 +3,12 @@ order: asc
 nav:
     - Resources: index.md
     - Conceptual Tutorials:
-        - Project Management: project-management
-        - Database: database
-        - Frontend: frontend
-        - Backend: backend-architecture
-        - APIs: apis
-        - git: git
-        - MkDocs: MkDocs
+          - Database: database
+          - Frontend: frontend
+          - Backend: backend-architecture
+          - APIs: apis
+          - git: git
+          - MkDocs: MkDocs
     - Course Content:
-        - syllabus.md
-        - team.md
-        - playlist.md
+          - syllabus.md
+          - playlist.md
