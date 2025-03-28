@@ -9,10 +9,15 @@ hide:
 
 ### Agile Project Planning
 
+#### Fri 03/28
+
+* `MT26 - Meeting` [Project Boards](./meetings/2025_03_28.md)
+* `RD31 - Reading` [Google's Engineering Practices: Code Review](https://google.github.io/eng-practices/) ==Due: Sun 3/30==
+
 #### Wed 03/26
 
 * `MT25 - Meeting` [Career Planning](./meetings/2025_03_26.md)
-* `RD30 - Reading` [Team Repo Setup](https://comp423-25s.github.io/resources/exercises/sp00-api-spec/#team-project-setup) ==Due: Thu 3/26==
+* `RD30 - Reading` [Team Repo Setup](https://comp423-25s.github.io/resources/exercises/sp00-api-spec/#team-project-setup) Due: Thu 3/26
 
 #### Mon 03/24
 
