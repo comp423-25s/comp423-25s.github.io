@@ -7,12 +7,22 @@ hide:
 
 ## Schedule
 
-### Agile Project Planning
+### Sprint 1: End-to-End Code Prototype Sprint
+
+#### Mon 03/31
+
+* `MT27 - Meeting` [SP00 Demo Day and SP01 Kick-off](./meetings/2025_03_31.md)
+* `SP00 - Sprint` Sprint 00 Submissions Individual and Team ==Due: Mon 03/31==
+* `SP01 - Sprint` Sprint 01 - End-to-End Code Prototype Sprint ==Week 0 Due: Sun 04/06==
+* `RD32 - Reading` [Introduction to Angular Widgets on CSXL.unc.edu](https://github.com/unc-csxl/orientation/blob/main/angular/widgets.md)
+ ==Due: Tue 04/01==
+
+### Sprint 0: Agile Project Planning
 
 #### Fri 03/28
 
 * `MT26 - Meeting` [Project Boards](./meetings/2025_03_28.md)
-* `RD31 - Reading` [Google's Engineering Practices: Code Review](https://google.github.io/eng-practices/) ==Due: Sun 3/30==
+* `RD31 - Reading` [Google's Engineering Practices: Code Review](https://google.github.io/eng-practices/) Due: Sun 3/30
 
 #### Wed 03/26
 
