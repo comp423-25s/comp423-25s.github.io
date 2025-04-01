@@ -12,8 +12,8 @@ hide:
 #### Mon 03/31
 
 * `MT27 - Meeting` [SP00 Demo Day and SP01 Kick-off](./meetings/2025_03_31.md)
-* `SP00 - Sprint` Sprint 00 Submissions Individual and Team ==Due: Mon 03/31==
-* `SP01 - Sprint` Sprint 01 - End-to-End Code Prototype Sprint ==Week 0 Due: Sun 04/06==
+* `SP00 - Sprint` [Sprint 00 Submissions Individual and Team](https://gradescope.com) ==Due: Mon 03/31==
+* `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 0](./resources/exercises/sp01-one-story.md) ==Due: Sun 04/06==
 * `RD32 - Reading` [Introduction to Angular Widgets on CSXL.unc.edu](https://github.com/unc-csxl/orientation/blob/main/angular/widgets.md)
  ==Due: Tue 04/01==
 
