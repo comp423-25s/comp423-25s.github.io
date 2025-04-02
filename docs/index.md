@@ -9,13 +9,18 @@ hide:
 
 ### Sprint 1: End-to-End Code Prototype Sprint
 
+#### Wed 04/02
+
+* `MT28 - Meeting` [XL Code Tour and Working Time](./meetings/2025_04_02.md)
+* `RD33 - Reading` [Authentication and Authorization on CSXL.unc.edu](https://github.com/unc-csxl/csxl.unc.edu/blob/main/docs/auth.md) ==Due: Thu 04/02==
+
 #### Mon 03/31
 
 * `MT27 - Meeting` [SP00 Demo Day and SP01 Kick-off](./meetings/2025_03_31.md)
-* `SP00 - Sprint` [Sprint 00 Submissions Individual and Team](https://gradescope.com) ==Due: Mon 03/31==
+* `SP00 - Sprint` [Sprint 00 Submissions Individual and Team](https://gradescope.com) Due: Mon 03/31
 * `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 0](./resources/exercises/sp01-one-story.md) ==Due: Sun 04/06==
 * `RD32 - Reading` [Introduction to Angular Widgets on CSXL.unc.edu](https://github.com/unc-csxl/orientation/blob/main/angular/widgets.md)
- ==Due: Tue 04/01==
+ Due: Tue 04/01
 
 ### Sprint 0: Agile Project Planning
 

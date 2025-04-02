@@ -94,4 +94,4 @@ Your team repository now protects `main` from modifications and requires Pull Re
 ## Running on CloudApps
 
 <!-- Before attempting to get your `stage` branch running on CloudApps, be sure you are locally working in your team's `stage` branch. -->
-Deployment instructions coming soon.
+Update: Deploying to CloudApps will be reserved for next week, not the first week of this Sprint.
