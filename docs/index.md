@@ -9,6 +9,10 @@ hide:
 
 ### Sprint 1: End-to-End Code Prototype Sprint
 
+#### Fri 04/04
+
+* `MT29 - Meeting` [Secrets, Env Vars, and OpenAI](./meetings/2025_04_04.md)
+
 #### Wed 04/02
 
 * `MT28 - Meeting` [XL Code Tour and Working Time](./meetings/2025_04_02.md)
