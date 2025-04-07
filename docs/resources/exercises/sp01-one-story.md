@@ -1,6 +1,6 @@
 # Sprint 1 - Week 1 - One Story End-to-End
 
-The goal of this sprint is to have your primary story working end-to-end in the CSXL code base. Additionally, your team will get into the flow of performing Pull Requests and Code Reviews for one another and keeping your project board updated to reflect the status of ongoing work. Finally, you will stand up a staging environment that mirrors our production environment on CloudApps.
+The goal of this sprint is to have your primary story working end-to-end in the CSXL code base. Additionally, your team will get into the flow of performing Pull Requests and Code Reviews for one another and keeping your project board updated to reflect the status of ongoing work.
 
 In the first week of this Sprint, your feature's backend services layer is permitted, and generally expected, to fake responses from the database and AI integration.
 
@@ -9,7 +9,6 @@ In the first week of this Sprint, your feature's backend services layer is permi
 * One story end-to-end
 * Project Management Standards
 * PR/CR Workflow Enforced from Stage
-* Running on CloudApps
 
 ## Your Primary Story
 
@@ -90,8 +89,3 @@ A member of the team should setup the branch protection rules for `main` and `st
     6. Save Changes with `Create`
 
 Your team repository now protects `main` from modifications and requires Pull Requests and Code Reviews on `stage`. This workflow is representative of many industrial workflow settings.
-
-## Running on CloudApps
-
-<!-- Before attempting to get your `stage` branch running on CloudApps, be sure you are locally working in your team's `stage` branch. -->
-Update: Deploying to CloudApps will be reserved for next week, not the first week of this Sprint.

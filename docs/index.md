@@ -9,6 +9,11 @@ hide:
 
 ### Sprint 1: End-to-End Code Prototype Sprint
 
+#### Mon 04/07
+
+* `MT30 - Meeting` [Entities and Demo Data](./meetings/2025_04_07.md)
+* `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 1](./resources/exercises/sp01-one-story-db.md) ==Due: Sun 04/13==
+
 #### Fri 04/04
 
 * `MT29 - Meeting` [Secrets, Env Vars, and OpenAI](./meetings/2025_04_04.md)
@@ -16,13 +21,13 @@ hide:
 #### Wed 04/02
 
 * `MT28 - Meeting` [XL Code Tour and Working Time](./meetings/2025_04_02.md)
-* `RD33 - Reading` [Authentication and Authorization on CSXL.unc.edu](https://github.com/unc-csxl/csxl.unc.edu/blob/main/docs/auth.md) ==Due: Thu 04/02==
+* `RD33 - Reading` [Authentication and Authorization on CSXL.unc.edu](https://github.com/unc-csxl/csxl.unc.edu/blob/main/docs/auth.md) Due: Thu 04/02
 
 #### Mon 03/31
 
 * `MT27 - Meeting` [SP00 Demo Day and SP01 Kick-off](./meetings/2025_03_31.md)
 * `SP00 - Sprint` [Sprint 00 Submissions Individual and Team](https://gradescope.com) Due: Mon 03/31
-* `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 0](./resources/exercises/sp01-one-story.md) ==Due: Sun 04/06==
+* `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 0](./resources/exercises/sp01-one-story.md) Due: Sun 04/06
 * `RD32 - Reading` [Introduction to Angular Widgets on CSXL.unc.edu](https://github.com/unc-csxl/orientation/blob/main/angular/widgets.md)
  Due: Tue 04/01
 
