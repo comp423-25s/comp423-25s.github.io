@@ -7,12 +7,27 @@ hide:
 
 ## Schedule
 
+### Sprint 2: Two Polished Stories for your Feature Sprint
+
+#### Mon 04/14
+
+* `MT32 - Meeting` [Sprint 1 Demo Day, Sprint 2 Kick-off](./meetings/2025_04_14.md)
+* `SP02 - Sprint` [Sprint 02 - Two Polished Stories End-to-End](../resources/exercises/sp02-second-story.md) ==Due: Mon 04/28==
+
 ### Sprint 1: End-to-End Code Prototype Sprint
+
+#### Fri 04/11
+
+* `MT31 - Meeting` Sprint 1 Working Day
+
+#### Wed 04/09
+
+* `QZ02 - Quiz` Quiz 2 - Front-end Concerns
 
 #### Mon 04/07
 
 * `MT30 - Meeting` [Entities and Demo Data](./meetings/2025_04_07.md)
-* `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 1](./resources/exercises/sp01-one-story-db.md) ==Due: Sun 04/13==
+* `SP01 - Sprint` [Sprint 01 - End-to-End Code Prototype Sprint - Week 1](./resources/exercises/sp01-one-story-db.md) Due: Sun 04/13
 
 #### Fri 04/04
 
@@ -46,7 +61,7 @@ hide:
 #### Mon 03/24
 
 * `MT24 - Meeting` [Interactive Prototypes](./meetings/2025_03_24.md)
-* `SP00 - Sprint` [Sprint 0 - Week 1 - Interactive Prototypes and API Scaffolding](./resources/exercises/sp00-api-spec.md) ==Due: Sun 3/30==
+* `SP00 - Sprint` [Sprint 0 - Week 1 - Interactive Prototypes and API Scaffolding](./resources/exercises/sp00-api-spec.md) Due: Sun 3/30
 
 #### Fri 03/21
 
