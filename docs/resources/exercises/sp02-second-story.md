@@ -59,6 +59,6 @@ The TAs are not permitted to assist with this extra credit opportunity in or out
 
 Some PRs have landed in production at `csxl.unc.edu` since you began Sprint 2: <https://github.com/unc-csxl/csxl.unc.edu/commits/main>
 
-To earn this point of extra credit, you should catch your stage branch up to `upstream/main` such that you have commit `ea620d4`, or later, in your `stage` branch. You may need to resolve conflicts. When creating a PR for this catch-up branch, **rather than squashing and merging into your `stage` in this instance you should use the "Create a Merge Commit" strategy**. This strategy will retain the history from production's main branch.
+To earn this point of extra credit, you should catch your stage branch up to `upstream/main` such that you have commit `cef9639`, or later, in your `stage` branch. You may need to resolve conflicts. When creating a PR for this catch-up branch, **rather than squashing and merging into your `stage` in this instance you should use the "Create a Merge Commit" strategy**. This strategy will retain the history from production's main branch.
 
 This is good practice, and easier to achieve, if it's done semi-regularly. Additionally, this serves as a prerequisite to being considered for merging your team's features into production after the semester ends.
