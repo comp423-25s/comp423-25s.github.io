@@ -49,6 +49,10 @@ Careful attention to permissions and access control should be paid to adhere to 
 
 Stories merged in to `stage` should be of usable, production quality.
 
+### Expectation 4. Running in Production on CloudApps
+
+Instructions coming soon :)
+
 ### Extra-Credit (1 point) - Catch Your `stage` Branch up with csxl.unc.edu Production
 
 The TAs are not permitted to assist with this extra credit opportunity in or outside of Office Hours.
