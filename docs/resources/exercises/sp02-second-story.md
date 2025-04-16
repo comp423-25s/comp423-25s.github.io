@@ -3,6 +3,8 @@ authors:
   - Kris Jordan
 ---
 
+# Sprint 2
+
 ## Sprint 2 Expectations
 
 This sprint is about arriving at a well implemented, tested, and thoughtful production-quality feature.

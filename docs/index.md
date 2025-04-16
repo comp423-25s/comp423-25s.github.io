@@ -13,6 +13,7 @@ hide:
 
 * `MT32 - Meeting` [Sprint 1 Demo Day, Sprint 2 Kick-off](./meetings/2025_04_14.md)
 * `SP02 - Sprint` [Sprint 02 - Two Polished Stories End-to-End](./resources/exercises/sp02-second-story.md) ==Due: Mon 04/28==
+* `SP02 - Sprint` [Deployment Instructions](./resources/exercises/sp02-deployment.md)
 
 ### Sprint 1: End-to-End Code Prototype Sprint
 
