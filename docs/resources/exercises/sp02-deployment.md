@@ -206,6 +206,26 @@ oc create route edge \
 
 You can now visit the hostname for your team and access it in the browser. If you see a message from OpenShift that says "Application is not available", it means that the application is still building. Once your build completes, you should see the application running, but there is still one more important step: resetting the database.
 
+!!! info "Crash-loop Back-off and 'OOM Killed' (Out of Memory)"
+
+    If your pod keeps crashing, with a message like "Killed by OOM Manager", it's because the Python/FastAPI server process requires more memory than your deployment is configured to provide by default. Our deployment platform, Kubernetes/OKD, monitors resource usage so that its resources are shared fairly among us. It takes a very conservative default, which can lead to your process being crashed when it needs more memory than the default. To ask for more memory, but still a modest amount for 2025 standards, take the following steps in CloudApps. You do not need to take these steps if your application is successfully running:
+
+    1. Go to Administrator > Workloads > Deployments
+    2. Select final-project
+    3. Go to YAML
+    4. Search for resources (you will find resources: {}). It's probably the third result for resources.
+    5. Update it to look like follows with the correct indentations:
+
+    ~~~
+    resources:
+      limits:
+        memory: 1Gi
+      requests:
+        memory: 512Mi
+    ~~~
+
+    After saving, your pod should restart and run successfully. Check the pod's logs and try navigating to your site. If you see the XL site load, you are successfully running in production! If it partially loads, but fails to load any data, that's because the instructions for resetting the database are in the section that follows!
+
 ### Resetting the Database
 
 The database that you created in the previous step is empty. You will need to reset the database to the state that it was in when you submitted your final project. To do this, you will need to run the `reset_demo.py` script that is included in your final project repository.
