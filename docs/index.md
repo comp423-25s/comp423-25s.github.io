@@ -9,6 +9,10 @@ hide:
 
 ### Sprint 2: Two Polished Stories for your Feature Sprint
 
+#### Mon 04/21
+
+* `MT34 - Meeting` [Presentation Skills](./meetings/2025_04_21.md)
+
 #### Wed 04/16
 
 * `MT33 - Meeting` [Sprint 2 Deployment](./meetings/2025_04_16.md)
