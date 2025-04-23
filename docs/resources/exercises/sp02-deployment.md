@@ -174,7 +174,7 @@ oc new-app python:3.11~git@github.com:comp423-25s/<your-final_repo_name>.git#sta
   --name=final-project \
   --strategy=docker \
   --env=MODE=development \
-  --env=HOST=csxl-team-<TEAM NUMBER>-comp423-25f.apps.unc.edu
+  --env=HOST=csxl-team-<TEAM NUMBER>-comp423-25s.apps.unc.edu
 ```
 
 Notice the `#stage` at the end of the repository URL. This is the branch name that OpenShift will pull from. When setting up the final project, you created a branch named `stage` and established it as the primary branch for your repository. This notion of a staging branch is a common practice in DevOps, and is a good way to keep your production code separate (live at csxl.unc.edu) from your development code (which you are establishing right now).
