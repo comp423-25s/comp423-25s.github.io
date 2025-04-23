@@ -208,23 +208,15 @@ You can now visit the hostname for your team and access it in the browser. If yo
 
 !!! info "Crash-loop Back-off and 'OOM Killed' (Out of Memory)"
 
-    If your pod keeps crashing, with a message like "Killed by OOM Manager", it's because the Python/FastAPI server process requires more memory than your deployment is configured to provide by default. Our deployment platform, Kubernetes/OKD, monitors resource usage so that its resources are shared fairly among us. It takes a very conservative default, which can lead to your process being crashed when it needs more memory than the default. To ask for more memory, but still a modest amount for 2025 standards, take the following steps in CloudApps. You do not need to take these steps if your application is successfully running:
-
-    1. Go to Administrator > Workloads > Deployments
-    2. Select final-project
-    3. Go to YAML
-    4. Search for resources (you will find resources: {}). It's probably the third result for resources.
-    5. Update it to look like follows with the correct indentations:
+    If your pod keeps crashing, with a message like "Killed by OOM Manager", it's because the Python/FastAPI server process requires more memory than your deployment is configured to provide by default. Our deployment platform, Kubernetes/OKD, monitors resource usage so that its resources are shared fairly among us. It takes a very conservative default, which can lead to your process being crashed when it needs more memory than the default. To ask for more memory, but still a modest amount for 2025 standards, take the following steps in the `oc` tool: 
 
     ~~~
-    resources:
-      limits:
-        memory: 1Gi
-      requests:
-        memory: 512Mi
+    oc set resources deployment/final-project --requests=memory=256Mi --limits=memory=1Gi
+    oc rollout restart deployment/final-project
     ~~~
 
-    After saving, your pod should restart and run successfully. Check the pod's logs and try navigating to your site. If you see the XL site load, you are successfully running in production! If it partially loads, but fails to load any data, that's because the instructions for resetting the database are in the section that follows!
+    The first command requests a higher memory limit for the deployment and the second restarts the pod in the deployment so that it uses the new settings.
+
 
 ### Resetting the Database
 
