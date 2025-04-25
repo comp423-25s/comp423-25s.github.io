@@ -9,6 +9,10 @@ hide:
 
 ### Sprint 2: Two Polished Stories for your Feature Sprint
 
+#### Wed 04/25
+
+* `MT36 - Meeting` [Stack Review](./meetings/2025_04_25.md)
+
 #### Wed 04/23
 
 * `MT35 - Meeting` [Working Day](./meetings/2025_04_23.md)
