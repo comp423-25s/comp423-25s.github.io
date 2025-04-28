@@ -53,7 +53,7 @@ Stories merged in to `stage` should be of usable, production quality.
 
 ### Expectation 4. Running in Production on CloudApps
 
-Instructions coming soon :)
+[Find deployment instructions here](./sp02-deployment.md).
 
 ### Extra-Credit (1 point) - Catch Your `stage` Branch up with csxl.unc.edu Production
 
