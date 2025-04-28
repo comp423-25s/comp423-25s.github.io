@@ -9,7 +9,11 @@ hide:
 
 ### Sprint 2: Two Polished Stories for your Feature Sprint
 
-#### Wed 04/25
+#### Mon 04/28
+
+* `MT37 - Meeting` [LDOC](./meetings/2025_04_28.md)
+
+#### Fri 04/25
 
 * `MT36 - Meeting` [Stack Review](./meetings/2025_04_25.md)
 
@@ -25,7 +29,7 @@ hide:
 
 * `MT33 - Meeting` [Sprint 2 Deployment](./meetings/2025_04_16.md)
 * `SP02 - Sprint` [Deployment Instructions](./resources/exercises/sp02-deployment.md)
-* `SP02 - Sprint` [Sprint 02 - Week 0 - Deployment and Progress on 2nd Story](../resources/exercises/sp02-deployment.md) ==Due: Wed 04/23==
+* `SP02 - Sprint` [Sprint 02 - Week 0 - Deployment and Progress on 2nd Story](./resources/exercises/sp02-second-story.md) ==Due: Wed 04/23==
 
 #### Mon 04/14
 
