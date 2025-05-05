@@ -74,8 +74,7 @@ Final grades are calculated with the following weights for each course component
 * 30% - Project Sprints (SP) / Final Project (FN)
     * 5% SP00 - Sprint 0
     * 5% SP01 - Sprint 1
-    * 5% SP02 - Sprint 2
-    * 5% SP03 - Sprint 3
+    * 10% SP02 - Sprint 2
     * 10% for Final Project Presentations and Final Project Hand-in
 * 30% - Homework
     * 15% - (EX) Exercises
