@@ -1,0 +1,3887 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ch2-git-fundamental-subcommands/">
+      
+      
+        <link rel="next" href="../ch4-git-remote-fetch-push-pull/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Ch. 3 Branching and Merging - COMP423 - Spring 2025</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/team.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ch-3-branching-and-merging" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="COMP423 - Spring 2025" class="md-header__button md-logo" aria-label="COMP423 - Spring 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 160a80 80 0 1 0 0-160 80 80 0 1 0 0 160m368 0a80 80 0 1 0 0-160 80 80 0 1 0 0 160M0 298.7C0 310.4 9.6 320 21.3 320h214c-26.6-23.5-43.3-57.8-43.3-96 0-7.6.7-15 1.9-22.3-13.6-6.3-28.7-9.7-44.6-9.7h-42.7C47.8 192 0 239.8 0 298.7M320 320c24 0 45.9-8.8 62.7-23.3 2.5-3.7 5.2-7.3 8-10.7 2.7-3.3 5.7-6.1 9-8.3C410 262.3 416 243.9 416 224c0-53-43-96-96-96s-96 43-96 96 43 96 96 96m65.4 60.2c-10.3-5.9-18.1-16.2-20.8-28.2H261.4C187.7 352 128 411.7 128 485.3c0 14.7 11.9 26.7 26.7 26.7h300.6c-2.1-5.2-3.2-10.9-3.2-16.4v-3c-1.3-.7-2.7-1.5-4-2.3l-2.6 1.5c-16.8 9.7-40.5 8-54.7-9.7-4.5-5.6-8.6-11.5-12.4-17.6l-.1-.2-.1-.2-2.4-4.1-.1-.2-.1-.2c-3.4-6.2-6.4-12.6-9-19.3-8.2-21.2 2.2-42.6 19-52.3l2.7-1.5v-4.6l-2.7-1.5zM533.3 192h-42.7c-15.9 0-31 3.5-44.6 9.7 1.3 7.2 1.9 14.7 1.9 22.3 0 17.4-3.5 33.9-9.7 49 2.5.9 4.9 2 7.1 3.3l2.6 1.5c1.3-.8 2.6-1.6 4-2.3v-3c0-19.4 13.3-39.1 35.8-42.6 7.9-1.2 16-1.9 24.2-1.9s16.3.6 24.2 1.9c22.5 3.5 35.8 23.2 35.8 42.6v3c1.3.7 2.7 1.5 4 2.3l2.6-1.5c16.8-9.7 40.5-8 54.7 9.7 2.3 2.8 4.5 5.8 6.6 8.7-2.1-57.1-49-102.7-106.6-102.7zm91.3 163.9c6.3-3.6 9.5-11.1 6.8-18-2.1-5.5-4.6-10.8-7.4-15.9l-2.3-4c-3.1-5.1-6.5-9.9-10.2-14.5-4.6-5.7-12.7-6.7-19-3l-2.9 1.7c-9.2 5.3-20.4 4-29.6-1.3s-16.1-14.5-16.1-25.1v-3.4c0-7.3-4.9-13.8-12.1-14.9-6.5-1-13.1-1.5-19.9-1.5s-13.4.5-19.9 1.5c-7.2 1.1-12.1 7.6-12.1 14.9v3.4c0 10.6-6.9 19.8-16.1 25.1s-20.4 6.6-29.6 1.3l-2.9-1.7c-6.3-3.6-14.4-2.6-19 3-3.7 4.6-7.1 9.5-10.2 14.6l-2.3 3.9c-2.8 5.1-5.3 10.4-7.4 15.9-2.6 6.8.5 14.3 6.8 17.9l2.9 1.7c9.2 5.3 13.7 15.8 13.7 26.4s-4.5 21.1-13.7 26.4l-3 1.7c-6.3 3.6-9.5 11.1-6.8 17.9 2.1 5.5 4.6 10.7 7.4 15.8l2.4 4.1c3 5.1 6.4 9.9 10.1 14.5 4.6 5.7 12.7 6.7 19 3l2.9-1.7c9.2-5.3 20.4-4 29.6 1.3s16.1 14.5 16.1 25.1v3.4c0 7.3 4.9 13.8 12.1 14.9 6.5 1 13.1 1.5 19.9 1.5s13.4-.5 19.9-1.5c7.2-1.1 12.1-7.6 12.1-14.9V492c0-10.6 6.9-19.8 16.1-25.1s20.4-6.6 29.6-1.3l2.9 1.7c6.3 3.6 14.4 2.6 19-3 3.7-4.6 7.1-9.4 10.1-14.5l2.4-4.2c2.8-5.1 5.3-10.3 7.4-15.8 2.6-6.8-.5-14.3-6.8-17.9l-3-1.7c-9.2-5.3-13.7-15.8-13.7-26.4s4.5-21.1 13.7-26.4l3-1.7zM472 384a40 40 0 1 1 80 0 40 40 0 1 1-80 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COMP423 - Spring 2025
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch. 3 Branching and Merging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../meetings/2025_04_28/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Meetings
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../people/team/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  People
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="COMP423 - Spring 2025" class="md-nav__button md-logo" aria-label="COMP423 - Spring 2025" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 160a80 80 0 1 0 0-160 80 80 0 1 0 0 160m368 0a80 80 0 1 0 0-160 80 80 0 1 0 0 160M0 298.7C0 310.4 9.6 320 21.3 320h214c-26.6-23.5-43.3-57.8-43.3-96 0-7.6.7-15 1.9-22.3-13.6-6.3-28.7-9.7-44.6-9.7h-42.7C47.8 192 0 239.8 0 298.7M320 320c24 0 45.9-8.8 62.7-23.3 2.5-3.7 5.2-7.3 8-10.7 2.7-3.3 5.7-6.1 9-8.3C410 262.3 416 243.9 416 224c0-53-43-96-96-96s-96 43-96 96 43 96 96 96m65.4 60.2c-10.3-5.9-18.1-16.2-20.8-28.2H261.4C187.7 352 128 411.7 128 485.3c0 14.7 11.9 26.7 26.7 26.7h300.6c-2.1-5.2-3.2-10.9-3.2-16.4v-3c-1.3-.7-2.7-1.5-4-2.3l-2.6 1.5c-16.8 9.7-40.5 8-54.7-9.7-4.5-5.6-8.6-11.5-12.4-17.6l-.1-.2-.1-.2-2.4-4.1-.1-.2-.1-.2c-3.4-6.2-6.4-12.6-9-19.3-8.2-21.2 2.2-42.6 19-52.3l2.7-1.5v-4.6l-2.7-1.5zM533.3 192h-42.7c-15.9 0-31 3.5-44.6 9.7 1.3 7.2 1.9 14.7 1.9 22.3 0 17.4-3.5 33.9-9.7 49 2.5.9 4.9 2 7.1 3.3l2.6 1.5c1.3-.8 2.6-1.6 4-2.3v-3c0-19.4 13.3-39.1 35.8-42.6 7.9-1.2 16-1.9 24.2-1.9s16.3.6 24.2 1.9c22.5 3.5 35.8 23.2 35.8 42.6v3c1.3.7 2.7 1.5 4 2.3l2.6-1.5c16.8-9.7 40.5-8 54.7 9.7 2.3 2.8 4.5 5.8 6.6 8.7-2.1-57.1-49-102.7-106.6-102.7zm91.3 163.9c6.3-3.6 9.5-11.1 6.8-18-2.1-5.5-4.6-10.8-7.4-15.9l-2.3-4c-3.1-5.1-6.5-9.9-10.2-14.5-4.6-5.7-12.7-6.7-19-3l-2.9 1.7c-9.2 5.3-20.4 4-29.6-1.3s-16.1-14.5-16.1-25.1v-3.4c0-7.3-4.9-13.8-12.1-14.9-6.5-1-13.1-1.5-19.9-1.5s-13.4.5-19.9 1.5c-7.2 1.1-12.1 7.6-12.1 14.9v3.4c0 10.6-6.9 19.8-16.1 25.1s-20.4 6.6-29.6 1.3l-2.9-1.7c-6.3-3.6-14.4-2.6-19 3-3.7 4.6-7.1 9.5-10.2 14.6l-2.3 3.9c-2.8 5.1-5.3 10.4-7.4 15.9-2.6 6.8.5 14.3 6.8 17.9l2.9 1.7c9.2 5.3 13.7 15.8 13.7 26.4s-4.5 21.1-13.7 26.4l-3 1.7c-6.3 3.6-9.5 11.1-6.8 17.9 2.1 5.5 4.6 10.7 7.4 15.8l2.4 4.1c3 5.1 6.4 9.9 10.1 14.5 4.6 5.7 12.7 6.7 19 3l2.9-1.7c9.2-5.3 20.4-4 29.6 1.3s16.1 14.5 16.1 25.1v3.4c0 7.3 4.9 13.8 12.1 14.9 6.5 1 13.1 1.5 19.9 1.5s13.4-.5 19.9-1.5c7.2-1.1 12.1-7.6 12.1-14.9V492c0-10.6 6.9-19.8 16.1-25.1s20.4-6.6 29.6-1.3l2.9 1.7c6.3 3.6 14.4 2.6 19-3 3.7-4.6 7.1-9.4 10.1-14.5l2.4-4.2c2.8-5.1 5.3-10.3 7.4-15.8 2.6-6.8-.5-14.3-6.8-17.9l-3-1.7c-9.2-5.3-13.7-15.8-13.7-26.4s4.5-21.1 13.7-26.4l3-1.7zM472 384a40 40 0 1 1 80 0 40 40 0 1 1-80 0"/></svg>
+
+    </a>
+    COMP423 - Spring 2025
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meetings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Meetings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/28. MT37 - LDOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/25. MT36 - Stack Review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/23. MT35 - Sprint Working Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/21. MT34 - Presentation Skills
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/16. MT33 - Sprint 2 Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/14. MT32 - Sprint 1 Demo Day, Sprint 2 Kick-off
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/07. MT30 - Entities and Demo Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/04. MT29 - Secrets, Env Vars, and OpenAI Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_04_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04/02. MT28 - Code Tour and Working Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/31. MT27 - SP00 Demo Day and SP01 Kick-off
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/28. MT26 - Project Boards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/26. MT25 - Career Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/24. MT24 - Interactive Prototypes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/21. MT23 - Figma &amp; Epic Work Day
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/19. MT22 - Wireframes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/17. MT21 - Final Project Kick-off
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/07. MT20 - Debugging Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/05. MT19 - Metaprogramming with Decorators and @Annotations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_03_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/03. MT18 - Syntactic Sugar: Destructuring, Rest, and Spread
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/28. MT17 - Lexical Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/26. MT16 - Lexical Closures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/24. MT15 - Higher-order Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/21. MT14 - Front-end Tooling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/17. MT13 - CI/CD Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/14. MT12 - Pairing time for EX01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/12. MT11 - API Case Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/05. MT10 - API Case Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_02_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02/03. MT09 - Input Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/31. MT08 - API Design Exercise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/29. MT07 - Intermediate git and HTTP Tool Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/27. MT06 - Containers Continued
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/24. MT05 - Modern Development Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/22. MT04 - Getting Started with ex00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/15. MT03 - Introducing git's Remote Commands: Fetch, Pull, and Push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/13. MT02 - Big Ideas in git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/10. MT01 - Software Development Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meetings/2025_01_08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/08. MT00 - Welcome to COMP423
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conceptual Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Conceptual Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/1-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introduction to Relational Databases &amp; SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/1-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JavaScript and the the Rise of the Web Client Platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/2-typescript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TypeScript For the COMP 301 Java Developer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/3-event-driven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Event-Driven Programming in TypeScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-architecture/0-layered-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0. Layered Architecture: Separating Concerns in Software Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-architecture/1-dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introduction to Dependency Injection in FastAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-architecture/2-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Introduction to Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-architecture/3-ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Introduction to CI/CD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    On Communication and APIs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            On Communication and APIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/0-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0. Communicating for Shared Understanding between Humans and Systems (APIs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/1-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Communication in the Software Development Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/2-api-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Advancements in Communication between Computing Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/3-api-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. Human Communication and API Design: A Shared Foundation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/4-http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Key Concepts in HTTP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/5-api-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Toward Designing and Formally Specifying APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/6-fast-api-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. FastAPI and Pydantic Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    git for COMP423
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            git for COMP423
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch0-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ch. 0 What is Source Code Management and git?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch1-git-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ch. 1 Core Concepts of a git Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch2-git-fundamental-subcommands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ch. 2 Fundamental git Subcommands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ch. 3 Branching and Merging
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ch. 3 Branching and Merging
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Branch?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Branch?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Branches?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-early-and-often" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch Early and Often
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-head-gits-current-working-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is HEAD? Git's Current Working Branch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-commit-to-a-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a New Commit to a Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-head-and-branch-updates-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How HEAD and Branch Updates Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-between-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching Between Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-in-progress-changes-when-switching-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling In-Progress Changes When Switching Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling In-Progress Changes When Switching Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-commit-your-changes-to-your-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Commit Your Changes to Your Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stash-your-changes-away-temporarily" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Stash your Changes away Temporarily
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-discard-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Discard Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-merge-vs-merge-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast-Forward Merge vs. Merge Commit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast-Forward Merge vs. Merge Commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast-Forward Merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge Commit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-switch-to-the-target-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Switch to the Target Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-merge-your-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Merge Your Feature Branch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-merge-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Merge Conflicts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-up-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleaning Up Branches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modern-git-why-use-git-switch-rather-than-git-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Git: Why use git switch rather than git checkout?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcommands-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subcommands Covered
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4-git-remote-fetch-push-pull/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ch. 4 Git Collaboration: Working with Remote Repositories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MkDocs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            MkDocs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MkDocs/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Starting a Static Website Project with MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MkDocs/ex00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EX00 - Collaborating on Technical Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Content
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Course Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Syllabus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playlist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semester Playlists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    People
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            People
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TA Team
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/alanna26_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alanna Zhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/albao_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alicia Bao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/alockard_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Andrew Lockard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/amitche_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mitchell Anderson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/axu1_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Amy Xu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/benjaben_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benjamin Eldridge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/bscc_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bernie Chen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/embreezy_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embrey Morton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/ifebaba_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ife Babarinde
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/kiernana_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kiernan Almand
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/ktcooper_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Katie Fort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/shainap_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shaina Patel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/wzahrt_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Will Zahrt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people/bios/xsw_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sunny Wang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Branch?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Branch?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Branches?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-early-and-often" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branch Early and Often
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-head-gits-current-working-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is HEAD? Git's Current Working Branch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-commit-to-a-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a New Commit to a Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-head-and-branch-updates-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How HEAD and Branch Updates Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-between-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching Between Branches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-in-progress-changes-when-switching-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling In-Progress Changes When Switching Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling In-Progress Changes When Switching Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-commit-your-changes-to-your-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Commit Your Changes to Your Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stash-your-changes-away-temporarily" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Stash your Changes away Temporarily
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-discard-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Discard Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging Branches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging Branches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-merge-vs-merge-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast-Forward Merge vs. Merge Commit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast-Forward Merge vs. Merge Commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast-Forward Merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge Commit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-switch-to-the-target-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Switch to the Target Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-merge-your-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Merge Your Feature Branch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-merge-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Merge Conflicts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleaning-up-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleaning Up Branches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modern-git-why-use-git-switch-rather-than-git-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Git: Why use git switch rather than git checkout?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcommands-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subcommands Covered
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ch-3-branching-and-merging">Ch. 3 Branching and Merging</h1>
+<p>Imagine this: you're working on a project like a collaborative web app, and you want to test out a bold new feature—maybe integrating a third-party login system—without disrupting the stable version already in use by other team members. In software teams, branching allows experimentation like this without risk. Or maybe you're part of a team, and multiple people are working on different features at the same time. How do you keep everything organized and avoid stepping on each other's toes? That’s where <strong>branching</strong> and <strong>merging</strong> come in—two of Git’s most powerful features.</p>
+<hr />
+<h2 id="what-is-a-branch">What is a Branch?</h2>
+<p>In Git, a <strong>branch</strong> has very simple, beautiful implementation: a branch is just a <strong>named pointer to a commit</strong> with the special behavior that <strong>when you create a new commit while working on a branch, the branch pointer automatically updates to reference the new commit</strong>. No other branch pointers are updated. This implementation idea gives rise to a powerful conceptual <strong>abstraction</strong>: branches conceptually represent multiple parallel version histories in a repository. </p>
+<p>When you first create a new branch, no change in your project's history occurs; instead, a new pointer to the last commit on your current branch is created. This means the two branches start off identical, both pointing to the same commit, sharing the same history. As two individual branches have additional commits added to them independently their histories will diverge, reflecting the different paths of development taken. When you decide it is time to incorporate work on one branch back into another branch, one branch's changes can be merged into another branch.</p>
+<h3 id="why-use-branches">Why Use Branches?</h3>
+<p>Branches are incredibly useful for:</p>
+<ul>
+<li><strong>Experimentation</strong>: Try out new ideas without impacting the stable version of your project.</li>
+<li><strong>Parallel Development</strong>: Multiple team members can work on different features or fixes at the same time.</li>
+<li><strong>Code Review</strong>: Branches allow you to submit changes for review before merging them into the main codebase.</li>
+</ul>
+<p>By isolating work on separate branches, you reduce the risk of overwriting someone else’s changes or introducing bugs into your <code>main</code> branch.</p>
+<h3 id="branch-early-and-often">Branch Early and Often</h3>
+<p>One of the best things about Git branches is how lightweight and fast they are. Think about <em>why</em> their implementation makes them lightweight and fast. This speed allows developers to create and switch between branches almost instantaneously, which is especially beneficial in modern workflows. For example, developers can branch off to work on features or fixes, test their changes in isolation, and merge them back quickly without delaying others’ progress. There’s virtually no cost to having as many branches as you need. This makes branches an essential tool for developers.</p>
+<p><strong>Key idiom</strong>: Branch early and often! Instead of making all your changes directly on <code>main</code> or a long-lived branch, create a branch for each new feature, bug fix, or experiment. This approach keeps your work isolated, makes it easier to collaborate, and allows for smoother integration later. Don’t hesitate—branches are free, use them liberally!</p>
+<hr />
+<h2 id="what-is-head-gits-current-working-branch">What is <code>HEAD</code>? Git's <em>Current Working Branch</em></h2>
+<p><code>HEAD</code> is a special pointer in Git that tells you <strong>where you are currently working</strong> in your project’s history. When <code>HEAD</code> is "<strong>attached</strong>" to a branch, you can think of <code>HEAD</code> as your <strong>current working branch</strong>. This is analogous to how your shell maintains your current working directory (CWD) such that shell commands you run are <em>relative</em> to your CWD. Git commands are relative to <code>HEAD</code>. </p>
+<p>Understanding <code>HEAD</code> helps you anticipate how Git commands behave:</p>
+<ul>
+<li><code>git commit</code>: Creates a new commit whose parent is the commit <code>HEAD</code> currently refers to. The branch <code>HEAD</code> is attached to is updated to refer to the freshly minted commit. This is how branches stay current with their latest commit.</li>
+<li><code>git log</code>: By default, displays commit history starting from <code>HEAD</code>.</li>
+<li><code>git restore</code>: Reverts files to the state they were in at the commit <code>HEAD</code> resolves to, allowing you to discard unwanted changes.</li>
+<li><code>git switch</code>: Causes <code>HEAD</code> to attach to a different branch and updates your working directory's contents to match the snapshot of that branch’s latest commit. If you have modified files that haven’t been staged, <code>git switch</code> will fail with a message letting you know you have uncommitted changes that are at risk of being overwritten.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Sometimes <code>HEAD</code> is <em>not</em> attached to a branch.</p>
+<p>You will learn more about a <em>detached <code>HEAD</code></em> state soon. It sounds spookier than it is. It just means <code>HEAD</code> points to a specific commit rather than to a branch. As soon as you create a new branch, which you will learn how to do next, you will no longer be in a detached <code>HEAD</code> state. This is useful when you want to go back to check out a commit that no branch currently points to, but nothing to concern ourselves with now.</p>
+</div>
+<hr />
+<h2 id="working-with-branches">Working with Branches</h2>
+<p>To work with branches in Git, the recommended modern commands are <code>git branch</code> and <code>git switch</code>. While <code>git checkout</code> is still available and widely used, it has a broader scope, which can make it less intuitive for branch-specific tasks. Let’s dive into best practices:</p>
+<h3 id="creating-a-branch">Creating a Branch</h3>
+<p>To create a new branch, use the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>branch<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>This creates the branch but doesn’t switch you to it. <strong>This command only creates a new pointer to the current commit that the <code>HEAD</code> branch is on.</strong> No history has changed, and no parallel history exists yet. At this point, the two branches are exactly equivalent to each other and both point to the exact same commit.</p>
+<p>To start working on the new branch immediately, use:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>switch<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>Once you understand these two steps independently, you can combine them with one command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>The <code>--create</code> flag, whose short variant is <code>-c</code>, combines creating a branch and switching to it in one command. Now, <code>HEAD</code> is pointing to <code>cool-feature</code>, and you’re ready to make changes.</p>
+<h3 id="viewing-branches">Viewing Branches</h3>
+<p>To see all the branches in your project and which one <code>HEAD</code> is pointing to:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
+<p>For example, if you have two branches (<code>main</code> and <code>cool-feature</code>), and you are currently on the <code>cool-feature</code> branch, the output will look like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>* cool-feature
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  main
+</span></code></pre></div>
+<p>The asterisk (<code>*</code>) indicates the branch that <code>HEAD</code> is currently pointing to. Again, think of <code>HEAD</code> as your <strong>current working branch</strong>.</p>
+<h3 id="adding-a-new-commit-to-a-branch">Adding a New Commit to a Branch</h3>
+<p>Once you’re on the <code>cool-feature</code> branch and ready to make changes, you can add a new commit as follows:</p>
+<p>(1) Modify a file in your project, for example, editing <code>README.md</code> to include some additional content.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a># Welcome to COMP423!
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>This repository is for learning git.
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Branching and merging is powerful!
+</span></code></pre></div>
+<p>(2) Stage the changes using <code>git add</code>, review your staged work with <code>git status</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>add<span class="w"> </span>README.md
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>(3) Commit the changes with a descriptive message:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add a note about branching and merging&quot;</span>
+</span></code></pre></div>
+<p>After committing, Git will output something like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[cool-feature abc1234] Add a note about branching and merging
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> 1 file changed, 7 insertions(+)
+</span></code></pre></div>
+<p>(4) Inspect the commit history using <code>git log</code> to see how the branch’s <code>HEAD</code> has moved forward:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>abc1234 (HEAD -&gt; cool-feature) Add a note about branching and merging
+</span></code></pre></div>
+<p>Here, you can see that <code>HEAD</code> has advanced to the new commit <code>abc1234</code> (your commit ID will be different) on the <code>cool-feature</code> branch.</p>
+<h3 id="how-head-and-branch-updates-work">How <code>HEAD</code> and Branch Updates Work</h3>
+<p>When you create a commit, Git uses <code>HEAD</code> to determine the parent of the new commit. The new commit will have the commit that <code>HEAD</code> was previously pointing to as its parent. After the commit is created, Git updates the branch that <code>HEAD</code> is attached to so that it points to the new commit. This is why the branch you’re working on moves forward with each commit you make. Yes, this is the second or third time this tutorial has repeated this and for good reason: once your mental model fully internalizes this concept you will find working with branches much, much easier to understand!</p>
+<h3 id="switching-between-branches">Switching Between Branches</h3>
+<p>To move between branches, whose histories are now different, use <code>switch</code> again:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git<span class="w"> </span>switch<span class="w"> </span>main
+</span></code></pre></div>
+<p>In practical terms, switching branches allows you to work on completely different features or bug fixes without overwriting or disrupting your current progress. For example, your <code>cool-feature</code> branch included some new text in <code>README.md</code>, switching back to <code>main</code> will revert the working directory, and therefore <code>README.md</code>, to reflect the last commit made in the <code>main</code> branch. You can then easily switch back to <code>cool-feature</code> and be back on its timeline. This separation ensures that changes in progress do not accidentally affect production or stable environments.</p>
+<h3 id="handling-in-progress-changes-when-switching-branches">Handling In-Progress Changes When Switching Branches</h3>
+<p>Sometimes, you’ll need to switch branches while you have in-progress changes in your working directory or staging. For example, you might need to review a colleague’s work or fix a bug on another branch. </p>
+<p>In such cases, you have three main strategies to proceed with:</p>
+<h4 id="1-commit-your-changes-to-your-branch">1. Commit Your Changes to Your Branch</h4>
+<p>If your current changes are in a good state, you can commit them to the current branch before switching:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;WIP: Save progress on feature&quot;</span>
+</span></code></pre></div>
+<p>This ensures your work is saved and associated with the current branch. Once committed, you can switch branches without any issues:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git<span class="w"> </span>switch<span class="w"> </span>branch-name
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">WIP is Work in Progress</p>
+<p>WIP is a common acronym in the softare engineering world. It is an abbreviation for <strong>Work in Progress</strong>. We are all WIPs.</p>
+</div>
+<h4 id="2-stash-your-changes-away-temporarily">2. Stash your Changes away Temporarily</h4>
+<p>If your changes are not ready to be committed, you can temporarily set them aside using the stash:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>stash
+</span></code></pre></div>
+<p>This stores your changes in a separate stash area and reverts your working directory to match the last commit. You can then switch branches:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>switch<span class="w"> </span>branch-name
+</span></code></pre></div>
+<p>When you return to your original branch, you can restore the stashed changes by "popping" them from your stash stack:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>git<span class="w"> </span>stash<span class="w"> </span>pop
+</span></code></pre></div>
+<h4 id="3-discard-your-changes">3. Discard Your Changes</h4>
+<p>If the changes you’ve made aren’t needed, you can discard them using previously learned commands:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>.
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>git<span class="w"> </span>restore<span class="w"> </span>.
+</span></code></pre></div>
+<p>These commands resets your working directory and clear your staging index to match the last commit on the branch, effectively throwing away any modifications. Once reset, you’re free to switch branches:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git<span class="w"> </span>switch<span class="w"> </span>branch-name
+</span></code></pre></div>
+<hr />
+<h2 id="merging-branches">Merging Branches</h2>
+<p>Once your work on a branch is complete, you’ll want to combine it with another branch (usually <code>main</code>). Merging into <code>main</code> is a best practice because it keeps the central branch stable and reflects the latest working version of your project. This aligns with workflows like trunk-based development, where small, frequent merges into a shared branch help reduce integration problems and ensure that everyone is working from a reliable codebase. This process is called <strong>merging</strong>.</p>
+<h3 id="fast-forward-merge-vs-merge-commit">Fast-Forward Merge vs. Merge Commit</h3>
+<p>When merging, Git uses two main strategies:</p>
+<h4 id="fast-forward-merge">Fast-Forward Merge</h4>
+<p>If the branch being merged hasn’t diverged from the target branch (e.g., no new commits were made on <code>main</code> since <code>cool-feature</code> started), Git can simply move the pointer of the target branch forward to the latest commit of the merged branch. This is called a <strong>fast-forward merge</strong>.</p>
+<p>For instance, imagine a developer creates a branch for fixing a small bug and completes the fix without any changes occurring on <code>main</code> in the meantime. A fast-forward merge is efficient and keeps the history clean:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>merge<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>After the merge, the history will look like a single line of commits, as if all the work was done directly on the target branch <code>main</code>.</p>
+<h4 id="merge-commit">Merge Commit</h4>
+<p>If the branches have diverged (e.g., both <code>main</code> and <code>cool-feature</code> have new commits), Git creates a <strong>merge commit</strong> to combine their histories. A merge commit has <strong>two parent commits</strong>, representing the tips of the branches being merged.</p>
+<p>This strategy is particularly useful in larger projects where multiple developers are contributing. For example, if one developer has added a new feature while another has updated documentation on <code>main</code>, a merge commit preserves the distinct contributions:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git<span class="w"> </span>merge<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>Here’s how the history looks with a merge commit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>*   Merge branch &#39;cool-feature&#39;
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>|\
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>| * Commit on cool-feature
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>* | Commit on main
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>|/
+</span></code></pre></div>
+<p>To inspect a merge commit and see its parents:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline
+</span></code></pre></div>
+<p>Merge commits make it easier to trace where specific changes originated, which can be critical for debugging or auditing code.</p>
+<h3 id="step-1-switch-to-the-target-branch">Step 1: Switch to the Target Branch</h3>
+<p>First, switch to the branch you want to merge into (e.g., <code>main</code>):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+</span></code></pre></div>
+<p>This step is crucial because Git applies merge operations to the branch that <code>HEAD</code> is currently pointing to. If you accidentally target the wrong branch, you might unintentionally merge unfinished or experimental changes into a stable branch like <code>main</code>, potentially introducing bugs or breaking the build. For example, imagine merging an in-progress feature branch into <code>main</code> during a product release—this could disrupt the deployment process and create significant headaches for the team.</p>
+<h3 id="step-2-merge-your-feature-branch">Step 2: Merge Your Feature Branch</h3>
+<p>Next, run the merge command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git<span class="w"> </span>merge<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>If there are no conflicts, Git will combine the changes, and you’re done! 🎉</p>
+<hr />
+<h2 id="handling-merge-conflicts">Handling Merge Conflicts</h2>
+<p>Sometimes, two branches modify the same part of a file, and Git doesn’t know which version to keep. For example, imagine two developers working on the same function in a file—one optimizes its performance while the other updates its documentation. When these changes are merged, Git identifies a conflict because both developers altered the same section of the file, requiring manual resolution. This is called a <strong>merge conflict</strong>. When this happens, Git will pause the merge and mark the conflicting sections in your files like this:</p>
+<div class="language-text highlight"><pre><span></span><code>```plaintext
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Code from the current branch
+=======
+Code from the branch being merged
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; cool-feature
+```
+</code></pre></div>
+<p>To resolve the conflict:</p>
+<p>(1) Use <code>git status</code> to see which files have conflicts. It will list the files that need attention:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>This is especially useful if multiple files are involved.</p>
+<p>(2) Open each conflicting file and manually edit it to remove the conflict markers and choose the correct content.</p>
+<p>(3) Add the resolved files:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>git<span class="w"> </span>add<span class="w"> </span>&lt;file&gt;
+</span></code></pre></div>
+<p>(4) Complete the merge with a commit:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Resolve merge conflict&quot;</span>
+</span></code></pre></div>
+<p>If you decide you don’t want to proceed with the merge and want to return to the state before the merge started, you can abort the merge with:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>git<span class="w"> </span>merge<span class="w"> </span>--abort
+</span></code></pre></div>
+<p>This will cancel the merge and reset your working directory to the state it was in before the merge began.</p>
+<hr />
+<h2 id="cleaning-up-branches">Cleaning Up Branches</h2>
+<p>Once a branch has been merged, you can delete it to keep your repository tidy:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<p>If the branch hasn’t been merged but you still want to delete it, use:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>cool-feature
+</span></code></pre></div>
+<hr />
+<h2 id="modern-git-why-use-git-switch-rather-than-git-checkout">Modern Git: Why use <code>git switch</code> rather than <code>git checkout</code>?</h2>
+<p>Many tutorials and older users of <code>git</code> will use <code>checkout</code> where you are learning to use <code>switch</code>. Why?</p>
+<p><code>git switch</code> was introduced in Git version 2.23 (August 2019) as part of an effort to make Git’s commands more user-friendly and less ambiguous. Historically, <code>git checkout</code> handled many different tasks, from switching branches to checking out individual files or commits. This multitasking nature often led to confusion for new users and even experienced developers.</p>
+<p>By separating branch-related operations (<code>git switch</code>) from other tasks like checking out specific files or commits (<code>git checkout</code>), Git improved usability and reduced the likelihood of mistakes. </p>
+<p>For most branching tasks, <code>git switch</code> is the modern and preferred choice. It simplifies workflows and makes commands more intuitive for beginners and teams alike.</p>
+<ul>
+<li><strong>Use <code>git switch</code></strong> for creating or moving between branches. It’s explicit and avoids accidentally losing work or entering a detached <code>HEAD</code> state.</li>
+<li><strong>Use <code>git checkout</code></strong> when you need to:<ul>
+<li>Recover a specific file from a previous commit:
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit-hash&gt;<span class="w"> </span>--<span class="w"> </span>&lt;file&gt;
+</span></code></pre></div></li>
+<li>Temporarily view or test a specific commit without creating a new branch (a detached HEAD state):
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit-hash&gt;
+</span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>A Git branch is a lightweight pointer to a commit. Your current working branch updates to point to new commits added to the branch.</li>
+<li>Use branches to isolate work, experiment, and collaborate without impacting other branches.</li>
+<li>Create branches early and often; they’re fast, lightweight, and encourage clean workflows.</li>
+<li>HEAD points to your current working branch or commit and guides Git commands.</li>
+<li>Use git switch to create or move between branches; it’s modern and more intuitive than git checkout.</li>
+<li>Branches can be merged either by fast-forwarding (when no divergence) or merge commits (when histories diverge).</li>
+<li>Resolve merge conflicts manually by editing files, staging changes, and committing resolutions.</li>
+<li>Delete merged branches with git branch -d to keep your repository clean.</li>
+<li>Commit, stash, or discard current changes in your working directory before switching branches to avoid conflicts or lost work.</li>
+</ul>
+<hr />
+<h2 id="subcommands-covered">Subcommands Covered</h2>
+<ul>
+<li><strong><code>git branch</code></strong>: Create, list, or delete branches; the core tool for managing branches.  </li>
+<li><strong><code>git branch -d</code></strong>: Safely delete branches that have been merged. <code>-D</code> is the unsafe variant.</li>
+<li><strong><code>git switch</code></strong>: Switch between branches or create and switch in one step with <code>--create</code>.  </li>
+<li><strong><code>git merge</code></strong>: Combine changes from one branch into another, creating a unified history.  </li>
+<li><strong><code>git merge --abort</code></strong>: Cancel a merge when there are conflicts and return to the pre-merge conflict state.</li>
+<li><strong><code>git log --graph --oneline</code></strong>: Visualize commit history with branch relationships.</li>
+<li><strong><code>git stash</code></strong>: Temporarily stash away changes to focus on other tasks or branches.  </li>
+<li><strong><code>git stash pop</code></strong>: Recover stashed changes to the current working directory.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ch2-git-fundamental-subcommands/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ch. 2 Fundamental git Subcommands">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Ch. 2 Fundamental git Subcommands
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ch4-git-remote-fetch-push-pull/" class="md-footer__link md-footer__link--next" aria-label="Next: Ch. 4 Git Collaboration: Working with Remote Repositories">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ch. 4 Git Collaboration: Working with Remote Repositories
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<div class="md-copyright">
+  <div class="md-copyright__highlight">
+  
+    Copyright &copy; 2025 Kris Jordan
+  
+  </div>
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "navigation.sections", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.indexes", "navigation.footer", "content.code.select", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
